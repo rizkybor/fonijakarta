@@ -20,7 +20,7 @@ export default function EventsPage() {
             <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Jadwal & Agenda</span>
             <div className="w-8 h-[2px] bg-[var(--color-foni-navy)]"></div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tighter leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tighter leading-[1.1]">
             Event & <span className="text-[var(--color-foni-navy)]">Kompetisi</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed">

@@ -48,7 +48,7 @@ export default function BeritaPage() {
                   {news.category}
                 </div>
               </div>
-              <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+              <div className="w-full md:w-1/2 p-6 md:p-10 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center gap-3 text-slate-400 text-sm font-bold mb-4">
                   <Calendar className="w-4 h-4 text-[var(--color-foni-orange)]" />
                   {news.date}

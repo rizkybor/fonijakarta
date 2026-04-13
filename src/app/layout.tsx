@@ -23,6 +23,15 @@ export const metadata: Metadata = {
   keywords: ["orienteering", "foni dki jakarta", "olahraga navigasi", "orienteering indonesia", "kompetisi orienteering", "peta orienteering", "kormi dki", "lari navigasi"],
   authors: [{ name: "FONI DKI Jakarta" }],
   creator: "FONI DKI Jakarta",
+  publisher: "FONI DKI Jakarta",
+  icons: {
+    icon: [
+      { url: '/logo/logo-foni-dki-icon.svg', type: 'image/svg+xml' }
+    ],
+    apple: [
+      { url: '/logo/logo-foni-dki-icon.svg' }
+    ]
+  },
   openGraph: {
     type: "website",
     locale: "id_ID",
@@ -71,7 +80,7 @@ export default function RootLayout({
       lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-800">
+      <body className="min-h-full flex flex-col bg-slate-50 text-slate-800 overflow-x-hidden">
         <Navbar />
         <main className="flex-1 flex flex-col">{children}</main>
         <Footer />

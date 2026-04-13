@@ -22,7 +22,7 @@ export default function KeanggotaanPage() {
             <div className="w-8 h-[2px] bg-[var(--color-foni-navy)]"></div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1] max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1] max-w-4xl mx-auto">
             Jaringan <br />
             <span className="text-[var(--color-foni-navy)]">Keanggotaan FONI</span>
           </h1>

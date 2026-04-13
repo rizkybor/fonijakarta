@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Map, Users, Calendar, Info, Phone, Home, Newspaper } from 'lucide-react';
@@ -49,7 +50,6 @@ export default function Navbar() {
     { name: 'Event', href: '/events', icon: Calendar },
     { name: 'Galeri Peta', href: '/maps', icon: Map },
     { name: 'Keanggotaan', href: '/keanggotaan', icon: Users },
-    { name: 'Kontak', href: '/contact', icon: Phone },
   ];
 
   return (
@@ -65,10 +65,19 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group z-50 relative">
-            <div className={`font-black text-2xl tracking-tighter transition-colors duration-300 ${
-              isTextWhite ? "text-white" : "text-slate-900"
-            }`}>
-              FONI<span className="text-[var(--color-foni-orange)]">DKI</span>
+            <div className="relative w-32 h-10 md:w-36 md:h-12 flex items-center transition-transform hover:scale-105 duration-300">
+              <Image
+                src="/logo/logo-foni.png"
+                alt="FONI DKI Jakarta Logo"
+                width={220}
+                height={64}
+                priority
+                className={`w-full h-full object-contain object-left ${
+                  isTextWhite
+                    ? 'drop-shadow-[0_10px_24px_rgba(0,0,0,0.35)]'
+                    : 'drop-shadow-[0_8px_18px_rgba(15,23,42,0.12)]'
+                }`}
+              />
             </div>
           </Link>
 
@@ -135,10 +144,10 @@ export default function Navbar() {
         {/* Mobile Menu Dropdown */}
         <div 
           className={`lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-2xl transition-all duration-500 ease-in-out overflow-hidden ${
-            isMobileMenuOpen ? 'max-h-[100vh] opacity-100' : 'max-h-0 opacity-0'
+            isMobileMenuOpen ? 'max-h-[calc(100vh-72px)] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="flex flex-col p-6 gap-2 bg-white h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="flex flex-col p-6 gap-2 bg-white h-[calc(100vh-72px)] overflow-y-auto">
             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 px-4">Menu Navigasi</p>
             {navLinks.map((link) => {
               const isActive = pathname === link.href;

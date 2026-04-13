@@ -31,7 +31,7 @@ export default function MapsPage() {
             <div className="w-8 h-[2px] bg-[var(--color-foni-navy)]"></div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1] max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1] max-w-4xl mx-auto">
             Galeri Peta <br />
             <span className="text-[var(--color-foni-navy)]">DKI Jakarta</span>
           </h1>
@@ -43,7 +43,7 @@ export default function MapsPage() {
       </section>
 
       {/* 2. Clean Filter Bar */}
-      <section className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+      <section className="sticky top-[80px] lg:top-[96px] z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="relative w-full md:w-96 group">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-[var(--color-foni-navy)] transition-colors" />

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <g transform="translate(10, 10)">
+    <!-- Abstract Orienteering Symbol -->
+    <path d="M20 0 L80 0 L100 50 L80 100 L20 100 L0 50 Z" fill="#FFFFFF" stroke="#0F172A" stroke-width="8"/>
+    <!-- Split color inside -->
+    <path d="M20 0 L100 50 L80 100 L0 50 Z" fill="#F59E0B" opacity="0.9"/>
+    <!-- Map marker / point dot -->
+    <circle cx="50" cy="50" r="12" fill="#FFFFFF"/>
+  </g>
+</svg>

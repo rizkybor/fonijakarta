@@ -16,7 +16,7 @@ import { siteStats, partners, upcomingEvents } from "@/lib/dummyData";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white pb-16">
+    <div className="min-h-screen bg-white">
       {/* 1. Hero Section - Centered Modern Floating */}
       <section className="pt-32 px-6 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-sm font-bold text-slate-600 mb-8 shadow-sm hover:shadow-md transition-shadow cursor-default">
@@ -24,7 +24,7 @@ export default function Home() {
           Pengurus Provinsi DKI Jakarta
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-slate-900 tracking-tighter leading-[1.05] mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black text-slate-900 tracking-tighter leading-[1.05] mb-6">
           Federasi{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-foni-navy)] to-blue-600">
             Orienteering
@@ -57,9 +57,9 @@ export default function Home() {
       </section>
 
       {/* 2. Massive Rounded Hero Video & Floating Stats */}
-      <section className="max-w-7xl mx-auto px-6 mt-16 relative z-10 mb-24">
+      <section className="max-w-7xl mx-auto px-6 mt-16 relative z-10 mb-16 md:mb-24">
         {/* Main Video */}
-        <div className="relative w-full aspect-[4/3] md:aspect-[21/9] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-slate-900 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border-[6px] md:border-8 border-white/80 ring-1 ring-slate-200 group">
+        <div className="relative w-full aspect-[4/3] md:aspect-[21/9] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-slate-900 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border-[4px] md:border-[6px] lg:border-8 border-white/80 ring-1 ring-slate-200 group">
           <div className="absolute inset-0 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-1000 scale-[1.3] md:scale-[1.1] group-hover:scale-[1.15]">
             <iframe
               src="https://www.youtube.com/embed/qyfDHtMqiWk?autoplay=1&mute=1&controls=0&loop=1&playlist=qyfDHtMqiWk&playsinline=1&rel=0&showinfo=0&modestbranding=1"
@@ -75,12 +75,86 @@ export default function Home() {
           {/* Inner shadow overlay for depth */}
           <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.2)] pointer-events-none rounded-[2.2rem] md:rounded-[2.6rem]"></div>
         </div>
+
+        {/* Stats Cards (Moved Below Video, Minimalist UI & Informative) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8 relative z-20">
+          <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
+            <span className="inline-flex w-12 h-12 items-center justify-center rounded-2xl bg-blue-50 text-[var(--color-foni-navy)] mb-5 group-hover:scale-110 group-hover:bg-blue-100 transition-transform">
+              <Users className="w-6 h-6" strokeWidth={2} />
+            </span>
+            <div className="font-black text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
+              {siteStats.athletes}
+              <span className="text-[var(--color-foni-orange)] text-[0.6em] align-super">
+                +
+              </span>
+            </div>
+            <div className="mt-2 text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
+              Atlet Aktif
+            </div>
+            <p className="mt-3 text-xs text-slate-500 leading-relaxed">
+              Berlatih dan terdaftar resmi di bawah binaan klub se-DKI Jakarta.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
+            <span className="inline-flex w-12 h-12 items-center justify-center rounded-2xl bg-orange-50 text-[var(--color-foni-orange)] mb-5 group-hover:scale-110 group-hover:bg-orange-100 transition-transform">
+              <Flag className="w-6 h-6" strokeWidth={2} />
+            </span>
+            <div className="font-black text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
+              {siteStats.clubs}
+            </div>
+            <div className="mt-2 text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
+              Klub FONI
+            </div>
+            <p className="mt-3 text-xs text-slate-500 leading-relaxed">
+              Klub orientering aktif yang tersebar di 5 wilayah kota
+              administrasi.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
+            <span className="inline-flex w-12 h-12 items-center justify-center rounded-2xl bg-blue-50 text-[var(--color-foni-navy)] mb-5 group-hover:scale-110 group-hover:bg-blue-100 transition-transform">
+              <Map className="w-6 h-6" strokeWidth={2} />
+            </span>
+            <div className="font-black text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
+              {siteStats.maps}
+            </div>
+            <div className="mt-2 text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
+              Peta IOF
+            </div>
+            <p className="mt-3 text-xs text-slate-500 leading-relaxed">
+              Peta berstandar internasional untuk kompetisi dan latihan rutin.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
+            <span className="inline-flex w-12 h-12 items-center justify-center rounded-2xl bg-orange-50 text-[var(--color-foni-orange)] mb-5 group-hover:scale-110 group-hover:bg-orange-100 transition-transform">
+              <Trophy className="w-6 h-6" strokeWidth={2} />
+            </span>
+            <div className="font-black text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
+              {siteStats.events}
+            </div>
+            <div className="mt-2 text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
+              Event Sukses
+            </div>
+            <p className="mt-3 text-xs text-slate-500 leading-relaxed">
+              Kompetisi daerah dan nasional yang berhasil diselenggarakan.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* 3. FONI DKI About (2 Column Section) */}
-      <section className="py-32 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="py-20 md:py-32 relative">
+        {/* Parallax Section Background */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=2070&auto=format&fit=crop)' }}
+        ></div>
+        <div className="absolute inset-0 bg-white/85"></div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Col: Image Mosaic/Visual */}
             <div className="relative">
               <div className="absolute top-10 -left-10 w-40 h-40 bg-[var(--color-foni-orange)]/10 rounded-full blur-3xl"></div>
@@ -166,7 +240,7 @@ export default function Home() {
       </section>
 
       {/* 4. Supported Logos */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
+      <section className="py-16 md:py-24 max-w-7xl mx-auto px-6">
         <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">
           Didukung & Terafiliasi Dengan
         </p>
@@ -184,8 +258,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Upcoming Events (Rounded Cards) */}
-      <section className="max-w-7xl mx-auto px-6 mb-32">
+      {/* 5. Upcoming Events (Rounded Cards) */}
+      <section className="max-w-7xl mx-auto px-6 mb-20 md:mb-32">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -256,9 +330,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. SPORTident Tech (Bento Box Layout) */}
-      <section className="max-w-7xl mx-auto px-6 mb-16">
-        <div className="bg-slate-50 rounded-[3rem] p-8 md:p-12 lg:p-16 border border-slate-100">
+      {/* 6. SPORTident Tech (Bento Box Layout) */}
+      <section className="py-20 md:py-32 relative mt-16 md:mt-24">
+        {/* Parallax Background */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1555696958-c5049b866f6f?q=80&w=2074&auto=format&fit=crop)' }}
+        ></div>
+        <div className="absolute inset-0 bg-slate-50/90"></div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-500 uppercase tracking-widest mb-6 shadow-sm">
               <Timer className="w-4 h-4 text-[var(--color-foni-orange)]" />{" "}
@@ -271,27 +352,35 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Main Bento */}
-            <div className="lg:col-span-2 bg-[var(--color-foni-navy)] rounded-[2rem] p-10 md:p-12 text-white relative overflow-hidden flex flex-col justify-center group shadow-lg">
-              <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              <h3 className="text-3xl md:text-4xl font-black mb-4 z-10 tracking-tight">
+            <div className="lg:col-span-2 rounded-[2rem] p-8 sm:p-10 md:p-12 text-white relative overflow-hidden flex flex-col justify-center group shadow-lg">
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-15"
+                style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1555696958-c5049b866f6f?q=80&w=2074&auto=format&fit=crop)' }}
+              ></div>
+              <div className="absolute inset-0 bg-[#0F172A]/90 mix-blend-multiply"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A]/95 via-[#1E3A8A]/80 to-[#1E3A8A]/90"></div>
+              
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 z-10 tracking-tight">
                 SPORTident Official
               </h3>
-              <p className="text-slate-300 text-lg leading-relaxed max-w-md z-10">
+              <p className="text-slate-200 text-lg md:text-xl leading-relaxed max-w-lg z-10 font-light">
                 Memastikan akurasi split-time presisi tinggi, hasil instan, dan
                 keadilan mutlak bagi seluruh peserta kompetisi orienteering.
               </p>
 
-              {/* Decorative Station */}
-              <div className="absolute bottom-[-15%] right-[-5%] w-64 h-64 bg-white/5 border border-white/10 rounded-full flex items-center justify-center backdrop-blur-md group-hover:scale-105 transition-transform duration-700 shadow-2xl">
-                <div className="w-32 h-32 border border-white/20 rounded-full flex items-center justify-center bg-slate-900/50">
-                  <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse shadow-[0_0_30px_rgba(239,68,68,1)]"></div>
+              {/* Decorative Station Concentric Circles */}
+              <div className="absolute bottom-[-20%] right-[-10%] w-80 h-80 bg-white/5 border border-white/10 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-1000 shadow-2xl">
+                <div className="w-48 h-48 border border-white/15 rounded-full flex items-center justify-center bg-white/5">
+                  <div className="w-24 h-24 border border-white/20 rounded-full flex items-center justify-center bg-slate-900/40">
+                    <div className="w-4 h-4 bg-red-500 rounded-full shadow-[0_0_30px_rgba(239,68,68,1)]"></div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Small Bentos */}
             <div className="flex flex-col gap-6">
-              <div className="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex-1">
+              <div className="bg-white rounded-[2rem] p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex-1">
                 <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
                   <Activity className="w-6 h-6 text-[var(--color-foni-orange)]" />
                 </div>
@@ -304,7 +393,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex-1">
+              <div className="bg-white rounded-[2rem] p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex-1">
                 <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
                   <ShieldCheck className="w-6 h-6 text-blue-600" />
                 </div>
@@ -319,7 +408,7 @@ export default function Home() {
             </div>
 
             {/* Bottom Bento */}
-            <div className="lg:col-span-3 bg-white rounded-[2rem] p-8 md:p-10 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row items-center gap-8 justify-between">
+            <div className="lg:col-span-3 bg-white rounded-[2rem] p-6 sm:p-8 md:p-10 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row items-center gap-6 sm:gap-8 justify-between">
               <div className="flex-1 text-center md:text-left">
                 <h4 className="text-2xl font-bold text-slate-900 mb-2">
                   Live Results & Printout
@@ -340,74 +429,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Cards (Moved Below Video, Minimalist UI & Informative) */}
-      <section className="max-w-7xl mx-auto px-6 mb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8 relative z-20">
-          <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
-            <span className="inline-flex w-12 h-12 items-center justify-center rounded-2xl bg-blue-50 text-[var(--color-foni-navy)] mb-5 group-hover:scale-110 group-hover:bg-blue-100 transition-transform">
-              <Users className="w-6 h-6" strokeWidth={2} />
-            </span>
-            <div className="font-black text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
-              {siteStats.athletes}
-              <span className="text-[var(--color-foni-orange)] text-[0.6em] align-super">
-                +
-              </span>
-            </div>
-            <div className="mt-2 text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
-              Atlet Aktif
-            </div>
-            <p className="mt-3 text-xs text-slate-500 leading-relaxed">
-              Berlatih dan terdaftar resmi di bawah binaan klub se-DKI Jakarta.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
-            <span className="inline-flex w-12 h-12 items-center justify-center rounded-2xl bg-orange-50 text-[var(--color-foni-orange)] mb-5 group-hover:scale-110 group-hover:bg-orange-100 transition-transform">
-              <Flag className="w-6 h-6" strokeWidth={2} />
-            </span>
-            <div className="font-black text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
-              {siteStats.clubs}
-            </div>
-            <div className="mt-2 text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
-              Klub FONI
-            </div>
-            <p className="mt-3 text-xs text-slate-500 leading-relaxed">
-              Klub orientering aktif yang tersebar di 5 wilayah kota
-              administrasi.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
-            <span className="inline-flex w-12 h-12 items-center justify-center rounded-2xl bg-blue-50 text-[var(--color-foni-navy)] mb-5 group-hover:scale-110 group-hover:bg-blue-100 transition-transform">
-              <Map className="w-6 h-6" strokeWidth={2} />
-            </span>
-            <div className="font-black text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
-              {siteStats.maps}
-            </div>
-            <div className="mt-2 text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
-              Peta IOF
-            </div>
-            <p className="mt-3 text-xs text-slate-500 leading-relaxed">
-              Peta berstandar internasional untuk kompetisi dan latihan rutin.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
-            <span className="inline-flex w-12 h-12 items-center justify-center rounded-2xl bg-orange-50 text-[var(--color-foni-orange)] mb-5 group-hover:scale-110 group-hover:bg-orange-100 transition-transform">
-              <Trophy className="w-6 h-6" strokeWidth={2} />
-            </span>
-            <div className="font-black text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
-              {siteStats.events}
-            </div>
-            <div className="mt-2 text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
-              Event Sukses
-            </div>
-            <p className="mt-3 text-xs text-slate-500 leading-relaxed">
-              Kompetisi daerah dan nasional yang berhasil diselenggarakan.
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

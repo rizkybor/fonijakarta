@@ -18,7 +18,7 @@ export default function ContactPage() {
             <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Pusat Bantuan</span>
             <div className="w-8 h-[2px] bg-[var(--color-foni-orange)]"></div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tighter leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tighter leading-[1.1]">
             Hubungi <span className="text-[var(--color-foni-navy)]">Kami</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed">
@@ -72,7 +72,7 @@ export default function ContactPage() {
               </div>
 
               {/* Social Media Links */}
-              <div className="mt-10 pt-8 border-t border-slate-100 flex gap-4">
+              <div className="mt-10 pt-8 border-t border-slate-100 flex flex-wrap gap-3 sm:gap-4">
                 <a href="#" className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 text-sm font-bold text-slate-500 hover:text-[var(--color-foni-navy)] hover:bg-[var(--color-foni-navy)]/5 transition-all">
                   Instagram <ExternalLink className="w-4 h-4" />
                 </a>
