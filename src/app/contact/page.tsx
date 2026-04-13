@@ -66,7 +66,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-800 mb-2 text-sm uppercase tracking-widest">Email</h3>
-                    <p className="text-slate-500 text-sm font-mono">info@fonidkijakarta.org</p>
+                    <p className="text-slate-500 text-sm font-mono">fonijakarta@gmail.com</p>
                   </div>
                 </div>
               </div>

@@ -26,16 +26,20 @@ export const metadata: Metadata = {
   publisher: "FONI DKI Jakarta",
   icons: {
     icon: [
-      { url: '/logo/logo-foni-dki-icon.svg', type: 'image/svg+xml' }
+      { url: "/logo/logo-foni.png", type: "image/png", sizes: "32x32" },
+      { url: "/logo/logo-foni-dki-icon.svg", type: "image/svg+xml" }
     ],
     apple: [
-      { url: '/logo/logo-foni-dki-icon.svg' }
-    ]
+      { url: "/logo/logo-foni.png", type: "image/png" }
+    ],
+    shortcut: [
+      { url: "/logo/logo-foni.png", type: "image/png" }
+    ],
   },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://fonidkijakarta.org",
+    url: "https://fonijakarta.web.id",
     title: "FONI DKI Jakarta | Federasi Orienteering Nasional Indonesia",
     description: "Website Resmi Federasi Orienteering Nasional Indonesia (FONI) Pengurus Provinsi DKI Jakarta. Membangun dan mengembangkan olahraga orienteering di Ibukota.",
     siteName: "FONI DKI Jakarta",
@@ -66,7 +70,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://fonidkijakarta.org",
+    canonical: "https://fonijakarta.web.id",
   },
 };
 

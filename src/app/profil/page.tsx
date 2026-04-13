@@ -37,7 +37,6 @@ export default function ProfilPage() {
                 <div className="sticky top-24">
                   <h2 className={`text-xl font-bold uppercase tracking-wider ${
                     index === 0 ? 'text-[var(--color-foni-navy)]' :
-                    index === 2 ? 'text-[var(--color-foni-orange)]' :
                     'text-slate-400 group-hover:text-slate-900 transition-colors'
                   }`}>
                     {group.level}

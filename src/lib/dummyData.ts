@@ -86,9 +86,14 @@ export const pengurusHierarchy = [
   {
     level: "Pembina",
     members: [
-      { name: "Ade Tri Nugraha", position: "Dewan Pembina" },
       { name: "Zulham Peliang", position: "Dewan Pembina" },
-      { name: "Rudy Kurniawan", position: "Dewan Pembina" }
+    ]
+  },
+   {
+    level: "Penasehat",
+    members: [
+      { name: "Ade Tri Nugraha", position: "Dewan Penasehat" },
+      { name: "Rudy Kurniawan", position: "Dewan Penasehat" }
     ]
   },
   {

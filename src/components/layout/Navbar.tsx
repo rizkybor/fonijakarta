@@ -65,14 +65,14 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group z-50 relative">
-            <div className="relative w-32 h-10 md:w-36 md:h-12 flex items-center transition-transform hover:scale-105 duration-300">
+            <div className="relative w-40 h-12 md:w-52 md:h-14 flex items-center transition-transform hover:scale-105 duration-300">
               <Image
                 src="/logo/logo-foni.png"
                 alt="FONI DKI Jakarta Logo"
-                width={220}
-                height={64}
+                width={520}
+                height={140}
                 priority
-                className={`w-full h-full object-contain object-left ${
+                className={`w-full h-full object-contain object-left origin-left scale-[1.06] ${
                   isTextWhite
                     ? 'drop-shadow-[0_10px_24px_rgba(0,0,0,0.35)]'
                     : 'drop-shadow-[0_8px_18px_rgba(15,23,42,0.12)]'

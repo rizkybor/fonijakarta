@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
@@ -9,8 +10,15 @@ export default function Footer() {
           {/* Brand & Description */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="font-bold text-2xl tracking-tighter text-white">
-                FONI<span className="text-[var(--color-foni-orange)]">DKI</span>
+              <div className="relative h-16 md:h-20 w-72 md:w-[22rem]">
+                <Image
+                  src="/logo/logo-foni-white.png"
+                  alt="FONI DKI Jakarta Logo"
+                  fill
+                  sizes="(min-width: 768px) 20rem, 16rem"
+                  className="object-contain object-left origin-left scale-[1.12]"
+                  priority
+                />
               </div>
             </Link>
             <p className="text-slate-400 mb-6 max-w-md leading-relaxed">
@@ -68,7 +76,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[var(--color-foni-orange)] shrink-0" />
-                <span className="text-sm">info@fonidkijakarta.org</span>
+                <span className="text-sm">fonijakarta@gmail.com</span>
               </li>
             </ul>
           </div>
