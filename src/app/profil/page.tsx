@@ -1,4 +1,10 @@
 import { pengurusHierarchy } from "@/lib/dummyData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Profil Pengurus",
+  description: "Susunan pengurus daerah Federasi Orienteering Nasional Indonesia (FONI) Provinsi DKI Jakarta masa bakti 2023-2027.",
+};
 
 export default function ProfilPage() {
   return (

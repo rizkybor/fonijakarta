@@ -1,6 +1,12 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import { Calendar, MapPin, ArrowRight, CheckCircle2, Flag, Navigation, BookOpen } from "lucide-react";
 import { upcomingEvents, pastEvents } from "@/lib/dummyData";
+
+export const metadata: Metadata = {
+  title: "Jadwal Event & Kompetisi",
+  description: "Kalender kegiatan resmi, latihan bersama, dan kejuaraan orienteering yang diselenggarakan di Provinsi DKI Jakarta.",
+};
 
 export default function EventsPage() {
   return (

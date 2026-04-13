@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import { MapPin, Phone, Mail, Send, ExternalLink } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Hubungi Kami",
+  description: "Pusat bantuan dan informasi kontak Sekretariat FONI Provinsi DKI Jakarta.",
+};
 
 export default function ContactPage() {
   return (

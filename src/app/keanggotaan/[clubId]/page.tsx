@@ -1,7 +1,20 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import { ArrowLeft, ShieldCheck, MapPin, Users, Medal, Globe, Building } from "lucide-react";
 import { clubsData } from "@/lib/dummyData";
+
+export async function generateMetadata({ params }: { params: Promise<{ clubId: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const club = clubsData[resolvedParams.clubId as keyof typeof clubsData];
+  
+  if (!club) return { title: "Klub Tidak Ditemukan" };
+  
+  return {
+    title: `Profil ${club.name}`,
+    description: `Daftar roster atlet orienteering dari ${club.name}, klub orienteering asal ${club.region} - DKI Jakarta.`,
+  };
+}
 
 export default async function ClubDetailPage({ params }: { params: Promise<{ clubId: string }> }) {
   const resolvedParams = await params;

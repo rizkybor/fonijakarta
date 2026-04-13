@@ -15,8 +15,50 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FONI DKI Jakarta",
-  description: "Website Resmi Federasi Orienteering Nasional Indonesia (FONI) Pengurus Provinsi DKI Jakarta",
+  title: {
+    default: "FONI DKI Jakarta | Federasi Orienteering Nasional Indonesia",
+    template: "%s | FONI DKI Jakarta",
+  },
+  description: "Website Resmi Federasi Orienteering Nasional Indonesia (FONI) Pengurus Provinsi DKI Jakarta. Membangun dan mengembangkan olahraga orienteering di Ibukota. Cerdas bernavigasi, tangguh berlari.",
+  keywords: ["orienteering", "foni dki jakarta", "olahraga navigasi", "orienteering indonesia", "kompetisi orienteering", "peta orienteering", "kormi dki", "lari navigasi"],
+  authors: [{ name: "FONI DKI Jakarta" }],
+  creator: "FONI DKI Jakarta",
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: "https://fonidkijakarta.org",
+    title: "FONI DKI Jakarta | Federasi Orienteering Nasional Indonesia",
+    description: "Website Resmi Federasi Orienteering Nasional Indonesia (FONI) Pengurus Provinsi DKI Jakarta. Membangun dan mengembangkan olahraga orienteering di Ibukota.",
+    siteName: "FONI DKI Jakarta",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop",
+        width: 1200,
+        height: 630,
+        alt: "Orienteering FONI DKI Jakarta",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FONI DKI Jakarta | Federasi Orienteering Nasional Indonesia",
+    description: "Website Resmi Federasi Orienteering Nasional Indonesia (FONI) Pengurus Provinsi DKI Jakarta.",
+    images: ["https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://fonidkijakarta.org",
+  },
 };
 
 export default function RootLayout({

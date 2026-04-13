@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
 import { Search, Map as MapIcon, Maximize, Clock, FileText, ArrowRight, ChevronDown, Lock } from "lucide-react";
 import { mapGallery } from "@/lib/dummyData";
+
+export const metadata: Metadata = {
+  title: "Galeri Peta IOF",
+  description: "Koleksi peta teknikal berstandar IOF (International Orienteering Federation) yang dikelola resmi oleh FONI DKI Jakarta.",
+};
 
 export default function MapsPage() {
   // Group maps by region

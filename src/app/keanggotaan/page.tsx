@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { Users, Map, Navigation, ShieldCheck, ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import { keanggotaanRegions, clubsData } from "@/lib/dummyData";
+
+export const metadata: Metadata = {
+  title: "Jaringan Keanggotaan & Klub",
+  description: "Persebaran klub orienteering terdaftar dan Sumber Daya Manusia (SDM) tersertifikasi di Provinsi DKI Jakarta.",
+};
 
 export default function KeanggotaanPage() {
   const clubsArray = Object.values(clubsData);
