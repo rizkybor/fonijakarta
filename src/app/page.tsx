@@ -25,13 +25,13 @@ export default function Home() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black text-slate-900 tracking-tighter leading-[1.05] mb-6">
-          Federasi{" "}
+          Satu{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-foni-navy)] to-blue-600">
-            Orienteering
+            Peta
           </span>{" "}
           <br className="hidden md:block" />
-          Nasional{" "}
-          <span className="text-[var(--color-foni-orange)]">Indonesia</span>
+          Seribu{" "}
+          <span className="text-[var(--color-foni-orange)]">Sinergi</span>
         </h1>
 
         <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium mb-10">

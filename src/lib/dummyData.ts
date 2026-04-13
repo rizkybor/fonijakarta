@@ -188,6 +188,42 @@ export const pengurusHierarchy = [
       { name: "Satrio Hutomo", position: "Kepala Bidang" },
       { name: "M.Umar Maaruf", position: "Wakil Bidang" }
     ]
+  },
+  {
+    level: "Pengurus Kota Jakarta Selatan",
+    members: [
+      { name: "Lorem Ipsum", position: "Ketua" }
+    ]
+  },
+  {
+    level: "Pengurus Kota Jakarta Barat",
+    members: [
+      { name: "Adipiscing Elit", position: "Ketua" },
+    ]
+  },
+  {
+    level: "Pengurus Kota Jakarta Pusat",
+    members: [
+      { name: "Incididunt Ut", position: "Ketua" },
+    ]
+  },
+  {
+    level: "Pengurus Kota Jakarta Timur",
+    members: [
+      { name: "Aliqua Ut", position: "Ketua" },
+    ]
+  },
+   {
+    level: "Pengurus Kota Jakarta Utara",
+    members: [
+      { name: "Incididunt Ut", position: "Ketua" },
+    ]
+  },
+  {
+    level: "Pengurus Kota Kepulauan Seribu",
+    members: [
+      { name: "Aliqua Ut", position: "Ketua" },
+    ]
   }
 ];
 
