@@ -10,13 +10,13 @@ export default function Footer() {
           {/* Brand & Description */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="relative h-16 md:h-20 w-72 md:w-[22rem]">
+              <div className="relative h-24 md:h-28 w-full max-w-[420px]">
                 <Image
                   src="/logo/logo-foni-white.png"
                   alt="FONI DKI Jakarta Logo"
                   fill
-                  sizes="(min-width: 768px) 20rem, 16rem"
-                  className="object-contain object-left origin-left scale-[1.12]"
+                  sizes="(min-width: 768px) 420px, 320px"
+                  className="object-contain object-left"
                   priority
                 />
               </div>

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Profil Pengurus",
-  description: "Susunan pengurus daerah Federasi Orienteering Nasional Indonesia (FONI) Provinsi DKI Jakarta masa bakti 2023-2027.",
+  description: "Susunan pengurus daerah Federasi Orienteering Nasional Indonesia (FONI) Provinsi DKI Jakarta masa bakti 2026-2030.",
 };
 
 export default function ProfilPage() {
@@ -21,7 +21,7 @@ export default function ProfilPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-foni-navy)] to-blue-600">Pengurus Daerah</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-light">
-            Mengenal lebih dekat sosok-sosok di balik pengembangan olahraga orienteering di Provinsi DKI Jakarta untuk masa bakti 2023-2027.
+            Mengenal lebih dekat sosok-sosok di balik pengembangan olahraga orienteering di Provinsi DKI Jakarta untuk masa bakti 2026-2030.
           </p>
         </div>
 

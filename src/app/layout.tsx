@@ -26,14 +26,13 @@ export const metadata: Metadata = {
   publisher: "FONI DKI Jakarta",
   icons: {
     icon: [
-      { url: "/logo/logo-foni.png", type: "image/png", sizes: "32x32" },
-      { url: "/logo/logo-foni-dki-icon.svg", type: "image/svg+xml" }
+      { url: "/favicon.ico", type: "image/x-icon" }
     ],
     apple: [
       { url: "/logo/logo-foni.png", type: "image/png" }
     ],
     shortcut: [
-      { url: "/logo/logo-foni.png", type: "image/png" }
+      { url: "/favicon.ico", type: "image/x-icon" }
     ],
   },
   openGraph: {
