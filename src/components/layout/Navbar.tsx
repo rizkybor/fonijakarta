@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Map, Users, Calendar, Info, Phone, Home } from 'lucide-react';
+import { Menu, X, Map, Users, Calendar, Info, Phone, Home, Newspaper } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,6 +45,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Profil', href: '/profil', icon: Info },
+    { name: 'Berita', href: '/berita', icon: Newspaper },
     { name: 'Event', href: '/events', icon: Calendar },
     { name: 'Galeri Peta', href: '/maps', icon: Map },
     { name: 'Keanggotaan', href: '/keanggotaan', icon: Users },

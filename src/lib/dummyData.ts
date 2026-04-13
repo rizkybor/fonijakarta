@@ -423,3 +423,58 @@ export const clubsData = {
     ]
   }
 };
+
+export const newsArticles = [
+  {
+    id: "news-1",
+    title: "Tim FONI DKI Jakarta Optimis Raih Emas di FORNAS VII",
+    excerpt: "Persiapan intensif terus dilakukan oleh tim pelatda DKI Jakarta menjelang perhelatan Festival Olahraga Rekreasi Nasional (FORNAS) VII di Jawa Barat.",
+    date: "12 Okt 2025",
+    category: "Prestasi",
+    image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=2070&auto=format&fit=crop",
+    featured: true
+  },
+  {
+    id: "news-2",
+    title: "Workshop Pemetaan Standar ISOM 2017-2 Berhasil Diselenggarakan",
+    excerpt: "Lebih dari 40 peserta dari berbagai klub orienteering se-Jakarta antusias mengikuti pelatihan pemetaan berstandar internasional yang dipandu oleh ahli dari IOF.",
+    date: "05 Sep 2025",
+    category: "Pelatihan",
+    image: "https://images.unsplash.com/photo-1542359649-31e03cd4d909?q=80&w=1974&auto=format&fit=crop",
+    featured: true
+  },
+  {
+    id: "news-3",
+    title: "Jakarta Orienteering Series: Seri 3 Digelar di Monas",
+    excerpt: "Ribuan masyarakat Jakarta memadati kawasan Monas untuk mencoba olahraga navigasi darat dalam gelaran seri ketiga JOS tahun ini.",
+    date: "28 Agu 2025",
+    category: "Event",
+    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop",
+    featured: false
+  },
+  {
+    id: "news-4",
+    title: "Sosialisasi Orienteering di Sekolah Menengah Atas DKI Jakarta",
+    excerpt: "FONI DKI Jakarta memulai program 'Orienteering Goes to School' untuk mengenalkan olahraga cerdas ini ke kalangan pelajar menengah atas.",
+    date: "15 Agu 2025",
+    category: "Sosialisasi",
+    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop",
+    featured: false
+  },
+  {
+    id: "news-5",
+    title: "Pemutakhiran Peta Hutan Kota Srengseng Rampung",
+    excerpt: "Kabar gembira bagi para orienteer, peta Hutan Kota Srengseng telah diperbarui dengan standar ISSprOM terbaru dan siap digunakan untuk latihan.",
+    date: "02 Agu 2025",
+    category: "Pemetaan",
+    image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2041&auto=format&fit=crop",
+    featured: false
+  }
+];
+
+export const sponsors = [
+  { id: "sp-1", name: "Bank DKI", logo: "/logos/bank-dki.svg", link: "#", tier: "platinum" },
+  { id: "sp-2", name: "Eiger Adventure", logo: "/logos/eiger.svg", link: "#", tier: "gold" },
+  { id: "sp-3", name: "Decathlon", logo: "/logos/decathlon.svg", link: "#", tier: "gold" },
+  { id: "sp-4", name: "Pocari Sweat", logo: "/logos/pocari.svg", link: "#", tier: "silver" },
+];
