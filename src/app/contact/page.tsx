@@ -43,9 +43,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-slate-800 mb-2 text-sm uppercase tracking-widest">Sekretariat</h3>
                     <p className="text-slate-500 text-sm leading-relaxed">
-                      Gedung KORMI Provinsi DKI Jakarta<br />
-                      Jl. Tanah Abang I, Petojo Selatan, Gambir<br />
-                      Jakarta Pusat 10160
+                      GOR Cendrawasih, Bambu larangan pengasingan<br />
+                      RT.9/RW.8, Kalideres, Kec. Kalideres<br />
+                      Kota Jakarta Barat, DKI Jakarta (11730)
                     </p>
                   </div>
                 </div>

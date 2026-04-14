@@ -68,7 +68,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[var(--color-foni-orange)] shrink-0 mt-0.5" />
-                <span className="text-sm">Gedung KORMI DKI Jakarta, Jl. Tanah Abang I, Jakarta Pusat</span>
+                <span className="text-sm">GOR Cendrawasih, Bambu larangan pengasingan, RT.9/RW.8, Kalideres, Kec. Kalideres, Kota Jakarta Barat, DKI Jakarta (11730)</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[var(--color-foni-orange)] shrink-0" />
