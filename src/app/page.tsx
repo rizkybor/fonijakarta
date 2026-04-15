@@ -189,7 +189,7 @@ export default async function Home() {
         {/* Parallax Section Background */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed max-lg:bg-scroll"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=2070&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1558978325-ead63dff09cb?q=80&w=2070&auto=format&fit=crop)' }}
         ></div>
         <div className="absolute inset-0 bg-white/85"></div>
 
@@ -386,7 +386,7 @@ export default async function Home() {
         {/* Parallax Background */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed max-lg:bg-scroll"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1555696958-c5049b866f6f?q=80&w=2074&auto=format&fit=crop)' }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1714724983417-1211761da4bc?q=80&w=2074&auto=format&fit=crop)' }}
         ></div>
         <div className="absolute inset-0 bg-slate-50/90"></div>
 
