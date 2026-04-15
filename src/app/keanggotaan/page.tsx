@@ -1,15 +1,78 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { Users, Map, Navigation, ShieldCheck, ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
-import { keanggotaanRegions, clubsData } from "@/lib/dummyData";
+import { Users, Map, Navigation, ShieldCheck, CheckCircle2, ChevronRight } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "Jaringan Keanggotaan & Klub",
   description: "Persebaran klub orienteering terdaftar dan Sumber Daya Manusia (SDM) tersertifikasi di Provinsi DKI Jakarta.",
 };
 
-export default function KeanggotaanPage() {
-  const clubsArray = Object.values(clubsData);
+export const revalidate = 60; // Revalidate every 60 seconds
+
+type Athlete = {
+  id: string;
+  name: string;
+  gender: string;
+  class: string;
+  nre: number;
+  wre: number;
+};
+
+type Klub = {
+  id: string;
+  name: string;
+  region: string;
+  registered: boolean;
+  athletes: Athlete[];
+};
+
+type SdmTersertifikasi = {
+  id: string;
+  region: string;
+  role: "mapper" | "planner" | "adviser";
+  name: string;
+  phone: string;
+  club: string;
+};
+
+export default async function KeanggotaanPage() {
+  const regions = [
+    { id: "jakpus", name: "Jakarta Pusat" },
+    { id: "jaksel", name: "Jakarta Selatan" },
+    { id: "jaktim", name: "Jakarta Timur" },
+    { id: "jakbar", name: "Jakarta Barat" },
+    { id: "jakut", name: "Jakarta Utara" },
+    { id: "pulauseribu", name: "Kepulauan Seribu" },
+  ];
+
+  const [{ data: clubsData }, { data: sdmData }] = await Promise.all([
+    supabase
+      .from("klub")
+      .select(
+        `
+        *,
+        athletes (*)
+      `,
+      )
+      .order("created_at", { ascending: true }),
+    supabase
+      .from("sdm_tersertifikasi")
+      .select("*")
+      .order("created_at", { ascending: true }),
+  ]);
+
+  const clubsArray = (clubsData || []) as Klub[];
+  const sdmArray = (sdmData || []) as SdmTersertifikasi[];
+
+  const sdmByRegion = sdmArray.reduce((acc, item) => {
+    const regionKey = item.region || "Lainnya";
+    if (!acc[regionKey]) acc[regionKey] = { mapper: [], planner: [], adviser: [] };
+    if (item.role === "mapper") acc[regionKey].mapper.push(item);
+    if (item.role === "planner") acc[regionKey].planner.push(item);
+    if (item.role === "adviser") acc[regionKey].adviser.push(item);
+    return acc;
+  }, {} as Record<string, { mapper: SdmTersertifikasi[]; planner: SdmTersertifikasi[]; adviser: SdmTersertifikasi[] }>);
 
   return (
     <div className="min-h-screen bg-slate-50 pb-32">
@@ -37,9 +100,10 @@ export default function KeanggotaanPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {keanggotaanRegions.map((region) => {
+            {regions.map((region) => {
               const regionClubs = clubsArray.filter(c => c.region === region.name);
               const shouldScrollClubs = regionClubs.length > 5;
+              const sdm = sdmByRegion[region.name] || { mapper: [], planner: [], adviser: [] };
 
               return (
                 <div key={region.id} className="bg-white rounded-[2rem] p-8 md:p-10 border border-slate-200 shadow-sm flex flex-col hover:shadow-xl transition-shadow duration-500 group">
@@ -67,10 +131,10 @@ export default function KeanggotaanPage() {
                         <div className="flex items-center gap-2 mb-4">
                           <Map className="w-3.5 h-3.5 text-slate-700" />
                           <span className="font-bold text-slate-800 text-xs flex-1">Mapper</span>
-                          <span className="bg-[var(--color-foni-navy)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{region.sdm.mapper.length}</span>
+                          <span className="bg-[var(--color-foni-navy)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.mapper.length}</span>
                         </div>
                         <div className="space-y-4">
-                          {region.sdm.mapper.length > 0 ? region.sdm.mapper.map((m, i) => (
+                          {sdm.mapper.length > 0 ? sdm.mapper.map((m, i) => (
                             <div key={i} className="text-[11px] leading-tight">
                               <p className="font-bold text-slate-900 mb-0.5">{m.name}</p>
                               <p className="text-slate-500">{m.club}</p>
@@ -85,10 +149,10 @@ export default function KeanggotaanPage() {
                         <div className="flex items-center gap-2 mb-4">
                           <Navigation className="w-3.5 h-3.5 text-slate-700" />
                           <span className="font-bold text-slate-800 text-xs flex-1">Planner</span>
-                          <span className="bg-[var(--color-foni-navy)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{region.sdm.planner.length}</span>
+                          <span className="bg-[var(--color-foni-navy)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.planner.length}</span>
                         </div>
                         <div className="space-y-4">
-                          {region.sdm.planner.length > 0 ? region.sdm.planner.map((m, i) => (
+                          {sdm.planner.length > 0 ? sdm.planner.map((m, i) => (
                             <div key={i} className="text-[11px] leading-tight">
                               <p className="font-bold text-slate-900 mb-0.5">{m.name}</p>
                               <p className="text-slate-500">{m.club}</p>
@@ -103,10 +167,10 @@ export default function KeanggotaanPage() {
                         <div className="flex items-center gap-2 mb-4">
                           <CheckCircle2 className="w-3.5 h-3.5 text-slate-700" />
                           <span className="font-bold text-slate-800 text-xs flex-1">Adviser</span>
-                          <span className="bg-[var(--color-foni-navy)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{region.sdm.adviser.length}</span>
+                          <span className="bg-[var(--color-foni-navy)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.adviser.length}</span>
                         </div>
                         <div className="space-y-4">
-                          {region.sdm.adviser.length > 0 ? region.sdm.adviser.map((m, i) => (
+                          {sdm.adviser.length > 0 ? sdm.adviser.map((m, i) => (
                             <div key={i} className="text-[11px] leading-tight">
                               <p className="font-bold text-slate-900 mb-0.5">{m.name}</p>
                               <p className="text-slate-500">{m.club}</p>

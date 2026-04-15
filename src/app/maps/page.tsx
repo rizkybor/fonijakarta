@@ -2,21 +2,45 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { Search, Map as MapIcon, Maximize, Clock, FileText, ArrowRight, ChevronDown, Lock } from "lucide-react";
-import { mapGallery } from "@/lib/dummyData";
+import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "Galeri Peta IOF",
   description: "Koleksi peta teknikal berstandar IOF (International Orienteering Federation) yang dikelola resmi oleh FONI DKI Jakarta.",
 };
 
-export default function MapsPage() {
+// Define Map Type
+type AppMap = {
+  id: string;
+  name: string;
+  region: string;
+  scale: string;
+  contour_interval: string;
+  year: string;
+  norm: string;
+  area_size: string;
+  status: string;
+  image: string;
+};
+
+export const revalidate = 60; // Revalidate every 60 seconds
+
+export default async function MapsPage() {
+  // Fetch maps from Supabase
+  const { data: mapsData } = await supabase
+    .from('galeripeta')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  const allMaps = (mapsData || []) as AppMap[];
+
   // Group maps by region
-  const groupedMaps = mapGallery.reduce((acc, mapItem) => {
+  const groupedMaps = allMaps.reduce((acc, mapItem) => {
     const region = mapItem.region || "Lainnya";
     if (!acc[region]) acc[region] = [];
     acc[region].push(mapItem);
     return acc;
-  }, {} as Record<string, typeof mapGallery>);
+  }, {} as Record<string, AppMap[]>);
 
   const regions = Object.keys(groupedMaps).sort();
 
@@ -133,11 +157,11 @@ export default function MapsPage() {
                         </div>
                         <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
                           <span className="text-slate-500 flex items-center gap-2"><FileText className="w-4 h-4"/> Kontur</span>
-                          <span className="font-bold text-slate-900">{mapItem.contourInterval}</span>
+                          <span className="font-bold text-slate-900">{mapItem.contour_interval}</span>
                         </div>
                         <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
                           <span className="text-slate-500 flex items-center gap-2"><Maximize className="w-4 h-4"/> Area</span>
-                          <span className="font-bold text-slate-900">{mapItem.areaSize}</span>
+                          <span className="font-bold text-slate-900">{mapItem.area_size}</span>
                         </div>
                         <div className="flex justify-between items-center text-sm">
                           <span className="text-slate-500 flex items-center gap-2"><Clock className="w-4 h-4"/> Tahun</span>

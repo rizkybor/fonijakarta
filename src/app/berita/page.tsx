@@ -1,11 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, ChevronRight, ArrowUpRight, TrendingUp, Sparkles, Tag } from "lucide-react";
-import { newsArticles, sponsors } from "@/lib/dummyData";
+import { sponsors } from "@/lib/dummyData";
+import { supabase } from "@/lib/supabase";
 
-export default function BeritaPage() {
-  const featuredNews = newsArticles.filter(news => news.featured);
-  const regularNews = newsArticles.filter(news => !news.featured);
+// Define the Berita type
+type Berita = {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  category: string;
+  image: string;
+  featured: boolean;
+  published_at: string;
+};
+
+export const revalidate = 60; // Revalidate every 60 seconds
+
+export default async function BeritaPage() {
+  // Fetch news from Supabase
+  const { data: newsArticles } = await supabase
+    .from('berita')
+    .select('*')
+    .order('published_at', { ascending: false });
+
+  const articles = (newsArticles || []) as Berita[];
+  const featuredNews = articles.filter(news => news.featured);
+  const regularNews = articles.filter(news => !news.featured);
+
+  // Format date helper
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('id-ID', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    });
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 pb-24">
@@ -33,7 +65,7 @@ export default function BeritaPage() {
         <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {featuredNews.map((news) => (
             <Link 
-              href={`/berita/${news.id}`} 
+              href={`/berita/${news.slug}`} 
               key={news.id}
               className="min-w-[85vw] md:min-w-[600px] lg:min-w-[800px] bg-white rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row group snap-center"
             >
@@ -51,7 +83,7 @@ export default function BeritaPage() {
               <div className="w-full md:w-1/2 p-6 md:p-10 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center gap-3 text-slate-400 text-sm font-bold mb-4">
                   <Calendar className="w-4 h-4 text-[var(--color-foni-orange)]" />
-                  {news.date}
+                  {formatDate(news.published_at)}
                 </div>
                 <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-tight group-hover:text-[var(--color-foni-navy)] transition-colors line-clamp-3">
                   {news.title}
@@ -84,7 +116,7 @@ export default function BeritaPage() {
             <div className="flex flex-col gap-6">
               {regularNews.map((news) => (
                 <Link 
-                  href={`/berita/${news.id}`} 
+                  href={`/berita/${news.slug}`} 
                   key={news.id}
                   className="bg-white rounded-[2rem] border border-slate-200 p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col sm:flex-row gap-6 group items-center"
                 >
@@ -102,7 +134,7 @@ export default function BeritaPage() {
                         {news.category}
                       </span>
                       <span className="text-xs font-bold text-slate-400 flex items-center gap-1.5">
-                        <Calendar className="w-3 h-3" /> {news.date}
+                        <Calendar className="w-3 h-3" /> {formatDate(news.published_at)}
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">

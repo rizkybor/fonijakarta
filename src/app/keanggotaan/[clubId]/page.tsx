@@ -2,11 +2,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { ArrowLeft, ShieldCheck, MapPin, Users, Medal, Globe, Building } from "lucide-react";
-import { clubsData } from "@/lib/dummyData";
+import { supabase } from "@/lib/supabase";
 
 export async function generateMetadata({ params }: { params: Promise<{ clubId: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  const club = clubsData[resolvedParams.clubId as keyof typeof clubsData];
+  const clubId = resolvedParams.clubId;
+
+  const { data: club } = await supabase
+    .from('klub')
+    .select('name, region')
+    .eq('id', clubId)
+    .single();
   
   if (!club) return { title: "Klub Tidak Ditemukan" };
   
@@ -16,14 +22,26 @@ export async function generateMetadata({ params }: { params: Promise<{ clubId: s
   };
 }
 
+export const revalidate = 60;
+
 export default async function ClubDetailPage({ params }: { params: Promise<{ clubId: string }> }) {
   const resolvedParams = await params;
   const clubId = resolvedParams.clubId;
-  const club = clubsData[clubId as keyof typeof clubsData];
+  
+  const { data: club } = await supabase
+    .from('klub')
+    .select(`
+      *,
+      athletes (*)
+    `)
+    .eq('id', clubId)
+    .single();
 
   if (!club) {
     notFound();
   }
+
+  const athletes = club.athletes || [];
 
   return (
     <div className="min-h-screen bg-slate-50 pb-32">
@@ -51,14 +69,14 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
               
               {club.registered && (
                 <div className="inline-flex items-center gap-2 text-green-700 bg-green-50 border border-green-200 px-4 py-2 rounded-full text-sm font-bold">
-                  <ShieldCheck className="w-4 h-4" /> FONI Registered Club
+                  <ShieldCheck className="w-4 h-4" /> Klub Terdaftar
                 </div>
               )}
             </div>
 
             <div className="bg-slate-50 border border-slate-200 px-8 py-6 rounded-[2rem] flex flex-col items-center justify-center shrink-0 min-w-[160px]">
               <Users className="w-6 h-6 text-[var(--color-foni-navy)] mb-2" />
-              <span className="text-4xl font-black text-slate-900">{club.athletes.length}</span>
+              <span className="text-4xl font-black text-slate-900">{athletes.length}</span>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Atlet Aktif</span>
             </div>
           </div>
@@ -86,7 +104,7 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
-                  {club.athletes.map((athlete) => (
+                  {athletes.map((athlete: any) => (
                     <tr key={athlete.id} className="hover:bg-slate-50 transition-colors group">
                       <td className="px-8 py-5">
                         <span className="font-bold text-slate-900 text-lg group-hover:text-[var(--color-foni-navy)] transition-colors">
@@ -117,7 +135,7 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
                       </td>
                     </tr>
                   ))}
-                  {club.athletes.length === 0 && (
+                  {athletes.length === 0 && (
                     <tr>
                       <td colSpan={5} className="px-8 py-16 text-center">
                         <div className="inline-flex flex-col items-center justify-center text-slate-400">

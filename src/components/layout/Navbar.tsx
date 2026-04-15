@@ -65,9 +65,9 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group z-50 relative">
-            <div className="relative w-44 h-14 md:w-64 md:h-16 flex items-center transition-transform hover:scale-105 duration-300">
+            <div className="relative w-57 h-11 md:w-77 md:h-25 flex items-center transition-transform hover:scale-105 duration-300">
               <Image
-                src="/logo/logo-foni.png"
+                src="/logo/logofonidki.png"
                 alt="FONI DKI Jakarta Logo"
                 width={520}
                 height={140}

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       { url: "/favicon.ico", type: "image/x-icon" }
     ],
     apple: [
-      { url: "/logo/logo-foni.png", type: "image/png" }
+      { url: "/logo/logofonidki.png", type: "image/png" }
     ],
     shortcut: [
       { url: "/favicon.ico", type: "image/x-icon" }

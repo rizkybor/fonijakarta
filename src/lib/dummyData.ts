@@ -148,7 +148,7 @@ export const pengurusHierarchy = [
   {
     level: "Bidang Teknis Pencatatan Waktu & Data Lomba",
     members: [
-      { name: "Aldi Pratama", position: "Kepala Bidang" },
+      { name: "Aldi Pratama Putra", position: "Kepala Bidang" },
       { name: "Fadilah Akbar", position: "Wakil Bidang" }
     ]
   },
@@ -187,42 +187,6 @@ export const pengurusHierarchy = [
     members: [
       { name: "Satrio Hutomo", position: "Kepala Bidang" },
       { name: "M.Umar Maaruf", position: "Wakil Bidang" }
-    ]
-  },
-  {
-    level: "Pengurus Kota Jakarta Selatan",
-    members: [
-      { name: "Lorem Ipsum", position: "Ketua" }
-    ]
-  },
-  {
-    level: "Pengurus Kota Jakarta Barat",
-    members: [
-      { name: "Adipiscing Elit", position: "Ketua" },
-    ]
-  },
-  {
-    level: "Pengurus Kota Jakarta Pusat",
-    members: [
-      { name: "Incididunt Ut", position: "Ketua" },
-    ]
-  },
-  {
-    level: "Pengurus Kota Jakarta Timur",
-    members: [
-      { name: "Aliqua Ut", position: "Ketua" },
-    ]
-  },
-   {
-    level: "Pengurus Kota Jakarta Utara",
-    members: [
-      { name: "Incididunt Ut", position: "Ketua" },
-    ]
-  },
-  {
-    level: "Pengurus Kota Kepulauan Seribu",
-    members: [
-      { name: "Aliqua Ut", position: "Ketua" },
     ]
   }
 ];

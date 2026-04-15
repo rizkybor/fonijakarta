@@ -1,14 +1,41 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { Calendar, MapPin, ArrowRight, CheckCircle2, Flag, Navigation, BookOpen } from "lucide-react";
-import { upcomingEvents, pastEvents } from "@/lib/dummyData";
+import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "Jadwal Event & Kompetisi",
   description: "Kalender kegiatan resmi, latihan bersama, dan kejuaraan orienteering yang diselenggarakan di Provinsi DKI Jakarta.",
 };
 
-export default function EventsPage() {
+// Define Event Type
+type AppEvent = {
+  id: string;
+  title: string;
+  date: string;
+  location: string;
+  type: string;
+  category: string;
+  status: string;
+  image: string | null;
+  is_past: boolean;
+};
+
+export const revalidate = 60; // Revalidate every 60 seconds
+
+export default async function EventsPage() {
+  // Fetch events from Supabase
+  const { data: eventsData } = await supabase
+    .from('events')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  const allEvents = (eventsData || []) as AppEvent[];
+  
+  // Filter events based on is_past flag
+  const upcomingEvents = allEvents.filter(evt => !evt.is_past);
+  const pastEvents = allEvents.filter(evt => evt.is_past);
+
   return (
     <div className="pt-32 pb-24 min-h-screen bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
@@ -44,7 +71,7 @@ export default function EventsPage() {
                 <div className="h-60 relative overflow-hidden bg-slate-100 p-3">
                   <div className="relative w-full h-full rounded-[1.25rem] overflow-hidden">
                     <Image
-                      src={evt.image}
+                      src={evt.image || '/logo/logofonidki.png'}
                       alt={evt.title}
                       fill
                       className="object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-transform duration-700"

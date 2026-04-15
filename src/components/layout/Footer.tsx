@@ -10,12 +10,12 @@ export default function Footer() {
           {/* Brand & Description */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="relative h-24 md:h-28 w-full max-w-[420px]">
+              <div className="relative h-28 sm:h-32 md:h-36 w-full max-w-[520px]">
                 <Image
-                  src="/logo/logo-foni-white.png"
+                  src="/logo/logofonidkiwhite.png"
                   alt="FONI DKI Jakarta Logo"
                   fill
-                  sizes="(min-width: 768px) 420px, 320px"
+                  sizes="(min-width: 768px) 520px, 360px"
                   className="object-contain object-left"
                   priority
                 />
@@ -51,13 +51,16 @@ export default function Footer() {
                 <Link href="/profil" className="hover:text-[var(--color-foni-orange)] transition-colors">Profil Pengurus</Link>
               </li>
               <li>
+                <Link href="/berita" className="hover:text-[var(--color-foni-orange)] transition-colors">Berita</Link>
+              </li>
+              <li>
                 <Link href="/events" className="hover:text-[var(--color-foni-orange)] transition-colors">Event & Kompetisi</Link>
               </li>
               <li>
                 <Link href="/maps" className="hover:text-[var(--color-foni-orange)] transition-colors">Galeri Peta</Link>
               </li>
               <li>
-                <Link href="/keanggotaan" className="hover:text-[var(--color-foni-orange)] transition-colors">Jaringan Keanggotaan</Link>
+                <Link href="/keanggotaan" className="hover:text-[var(--color-foni-orange)] transition-colors"> Keanggotaan</Link>
               </li>
             </ul>
           </div>
