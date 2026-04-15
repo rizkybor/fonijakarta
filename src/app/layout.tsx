@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "FONI DKI Jakarta",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop",
+        url: "https://fonijakarta.web.id/logo/LOGO_FONI_DKI.jpg",
         width: 1200,
         height: 630,
         alt: "FONI DKI Jakarta - Orienteering Indonesia",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FONI DKI Jakarta - Satu Peta Seribu Sinergi",
     description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengurus Provinsi DKI Jakarta. Informasi kompetisi, database atlet, dan pengembangan olahraga navigasi darat.",
-    images: ["https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop"],
+    images: ["https://fonijakarta.web.id/logo/LOGO_FONI_DKI.jpg"],
   },
   robots: {
     index: true,
