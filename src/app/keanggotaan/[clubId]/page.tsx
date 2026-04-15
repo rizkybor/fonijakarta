@@ -4,6 +4,15 @@ import { Metadata } from "next";
 import { ArrowLeft, ShieldCheck, MapPin, Users, Medal, Globe, Building } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
+type Athlete = {
+  id: string;
+  name: string;
+  gender: string;
+  class: string;
+  nre: number;
+  wre: number;
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ clubId: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const clubId = resolvedParams.clubId;
@@ -48,15 +57,15 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
       {/* 1. Minimalist Header */}
       <section className="relative pt-32 pb-16 bg-white border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 relative z-10">
-          <Link href="/keanggotaan" className="inline-flex items-center gap-2 text-slate-400 hover:text-[var(--color-foni-navy)] transition-colors mb-8 text-sm font-bold uppercase tracking-widest group">
+          <Link href="/keanggotaan" className="inline-flex items-center gap-2 text-slate-400 hover:text-foni-navy transition-colors mb-8 text-sm font-bold uppercase tracking-widest group">
             <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" /> Kembali
           </Link>
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[var(--color-foni-orange)]/10 flex items-center justify-center">
-                  <Building className="w-5 h-5 text-[var(--color-foni-orange)]" />
+                <div className="w-10 h-10 rounded-xl bg-foni-orange/10 flex items-center justify-center">
+                  <Building className="w-5 h-5 text-foni-orange" />
                 </div>
                 <div className="flex items-center gap-2 bg-slate-100 px-3 py-1 rounded-full text-xs font-bold text-slate-500 uppercase tracking-wider">
                   <MapPin className="w-3 h-3" /> {club.region}
@@ -74,8 +83,8 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
               )}
             </div>
 
-            <div className="bg-slate-50 border border-slate-200 px-8 py-6 rounded-[2rem] flex flex-col items-center justify-center shrink-0 min-w-[160px]">
-              <Users className="w-6 h-6 text-[var(--color-foni-navy)] mb-2" />
+            <div className="bg-slate-50 border border-slate-200 px-8 py-6 rounded-4xl flex flex-col items-center justify-center shrink-0 min-w-[160px]">
+              <Users className="w-6 h-6 text-foni-navy mb-2" />
               <span className="text-4xl font-black text-slate-900">{athletes.length}</span>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Atlet Aktif</span>
             </div>
@@ -88,10 +97,10 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
         <div className="max-w-5xl mx-auto px-6">
           <div className="flex items-center gap-4 mb-8">
             <h2 className="text-2xl font-black text-slate-900 tracking-tight">Roster Atlet</h2>
-            <div className="h-[2px] flex-1 bg-slate-200"></div>
+            <div className="h-0.5 flex-1 bg-slate-200"></div>
           </div>
 
-          <div className="bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden">
+          <div className="bg-white rounded-4xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
@@ -104,10 +113,10 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
-                  {athletes.map((athlete: any) => (
+                  {athletes.map((athlete: Athlete) => (
                     <tr key={athlete.id} className="hover:bg-slate-50 transition-colors group">
                       <td className="px-8 py-5">
-                        <span className="font-bold text-slate-900 text-lg group-hover:text-[var(--color-foni-navy)] transition-colors">
+                        <span className="font-bold text-slate-900 text-lg group-hover:text-foni-navy transition-colors">
                           {athlete.name}
                         </span>
                       </td>
@@ -117,7 +126,7 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
                         </span>
                       </td>
                       <td className="px-8 py-5">
-                        <span className="bg-[var(--color-foni-navy)]/5 text-[var(--color-foni-navy)] px-3 py-1.5 rounded-lg text-sm font-bold tracking-wider">
+                        <span className="bg-foni-navy/5 text-foni-navy px-3 py-1.5 rounded-lg text-sm font-bold tracking-wider">
                           {athlete.class}
                         </span>
                       </td>

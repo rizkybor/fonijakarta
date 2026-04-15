@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Map, Users, Calendar, Info, Phone, Home, Newspaper } from 'lucide-react';
+import { Menu, X, Map, Users, Calendar, Info, Home, Newspaper } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +26,12 @@ export default function Navbar() {
 
   // Close mobile menu when route changes
   useEffect(() => {
-    setIsMobileMenuOpen(false);
+    // Avoid synchronous state updates if not needed, or wrap in a timeout if necessary
+    // But for Next.js pathname change, it's generally fine, just use a timeout to avoid cascading renders
+    const timeoutId = setTimeout(() => {
+      setIsMobileMenuOpen(false);
+    }, 0);
+    return () => clearTimeout(timeoutId);
   }, [pathname]);
 
   // Lock body scroll when mobile menu is open
@@ -91,7 +96,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative px-5 py-2.5 text-sm font-bold transition-all duration-300 rounded-full group overflow-hidden ${
                     isActive 
-                      ? (isTextWhite ? 'text-white' : 'text-[var(--color-foni-navy)]')
+                      ? (isTextWhite ? 'text-white' : 'text-foni-navy')
                       : (isTextWhite ? 'text-white/70 hover:text-white' : 'text-slate-500 hover:text-slate-900')
                   }`}
                 >
@@ -103,7 +108,7 @@ export default function Navbar() {
                   {/* Active Indicator */}
                   {isActive && (
                     <span className={`absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${
-                      isTextWhite ? 'bg-[var(--color-foni-orange)]' : 'bg-[var(--color-foni-orange)]'
+                      isTextWhite ? 'bg-foni-orange' : 'bg-foni-orange'
                     }`}></span>
                   )}
                   
@@ -119,8 +124,8 @@ export default function Navbar() {
               href="/contact"
               className={`hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg ${
                 isTextWhite
-                  ? "bg-white text-[var(--color-foni-navy)] hover:bg-slate-50 shadow-white/20"
-                  : "bg-[var(--color-foni-navy)] text-white hover:bg-slate-800 shadow-[var(--color-foni-navy)]/20"
+                  ? "bg-white text-foni-navy hover:bg-slate-50 shadow-white/20"
+                  : "bg-foni-navy text-white hover:bg-slate-800 shadow-foni-navy/20"
               }`}
             >
               Hubungi Kami
@@ -157,12 +162,12 @@ export default function Navbar() {
                   href={link.href}
                   className={`flex items-center gap-4 p-4 rounded-2xl font-bold transition-all duration-300 ${
                     isActive 
-                      ? "bg-[var(--color-foni-navy)]/5 text-[var(--color-foni-navy)]" 
+                      ? "bg-foni-navy/5 text-foni-navy" 
                       : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                   }`}
                 >
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
-                    isActive ? "bg-[var(--color-foni-navy)]/10 text-[var(--color-foni-navy)]" : "bg-slate-100 text-slate-400"
+                    isActive ? "bg-foni-navy/10 text-foni-navy" : "bg-slate-100 text-slate-400"
                   }`}>
                     <link.icon className="w-5 h-5" />
                   </div>
@@ -174,7 +179,7 @@ export default function Navbar() {
             <div className="mt-8 pt-8 border-t border-slate-100">
               <Link
                 href="/contact"
-                className="w-full flex items-center justify-center gap-2 p-4 rounded-2xl font-bold bg-[var(--color-foni-navy)] text-white hover:bg-slate-800 transition-colors shadow-lg shadow-[var(--color-foni-navy)]/20"
+                className="w-full flex items-center justify-center gap-2 p-4 rounded-2xl font-bold bg-foni-navy text-white hover:bg-slate-800 transition-colors shadow-lg shadow-foni-navy/20"
               >
                 Hubungi Kami
               </Link>

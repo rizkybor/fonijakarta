@@ -24,7 +24,7 @@ export default function LoadingHome() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-12 sm:mt-16 relative z-10 mb-16 md:mb-24">
-        <div className="relative w-full aspect-[4/3] md:aspect-[21/9] rounded-3xl md:rounded-[3rem] overflow-hidden bg-slate-200 border border-slate-200" />
+        <div className="relative w-full aspect-4/3 md:aspect-21/9 rounded-3xl md:rounded-[3rem] overflow-hidden bg-slate-200 border border-slate-200" />
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 relative z-20">
           {[1, 2, 3, 4].map((i) => (
@@ -68,7 +68,7 @@ export default function LoadingHome() {
           {[1, 2, 3].map((i) => (
             <div
               key={i}
-              className="min-w-[320px] md:min-w-[380px] w-[85vw] md:w-[380px] shrink-0 bg-white rounded-[2rem] border border-slate-200 shadow-sm flex flex-col overflow-hidden"
+              className="min-w-[320px] md:min-w-95 w-[85vw] md:w-95 shrink-0 bg-white rounded-4xl border border-slate-200 shadow-sm flex flex-col overflow-hidden"
             >
               <div className="h-56 bg-slate-200" />
               <div className="p-8 flex flex-col flex-1">

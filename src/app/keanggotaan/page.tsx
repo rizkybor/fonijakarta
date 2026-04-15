@@ -80,14 +80,14 @@ export default async function KeanggotaanPage() {
       <section className="relative pt-32 pb-24 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center justify-center gap-4 mb-6">
-            <div className="w-8 h-[2px] bg-[var(--color-foni-navy)]"></div>
+            <div className="w-8 h-0.5 bg-foni-navy"></div>
             <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Database Organisasi</span>
-            <div className="w-8 h-[2px] bg-[var(--color-foni-navy)]"></div>
+            <div className="w-8 h-0.5 bg-foni-navy"></div>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1] max-w-4xl mx-auto">
             Jaringan <br />
-            <span className="text-[var(--color-foni-navy)]">Keanggotaan FONI</span>
+            <span className="text-foni-navy">Keanggotaan FONI</span>
           </h1>
           
           <p className="text-xl text-slate-500 font-light max-w-2xl mx-auto leading-relaxed">
@@ -106,10 +106,10 @@ export default async function KeanggotaanPage() {
               const sdm = sdmByRegion[region.name] || { mapper: [], planner: [], adviser: [] };
 
               return (
-                <div key={region.id} className="bg-white rounded-[2rem] p-8 md:p-10 border border-slate-200 shadow-sm flex flex-col hover:shadow-xl transition-shadow duration-500 group">
+                <div key={region.id} className="bg-white rounded-4xl p-8 md:p-10 border border-slate-200 shadow-sm flex flex-col hover:shadow-xl transition-shadow duration-500 group">
                   {/* Region Header */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-100">
-                    <h2 className="text-2xl font-black text-slate-900 tracking-tight group-hover:text-[var(--color-foni-navy)] transition-colors">
+                    <h2 className="text-2xl font-black text-slate-900 tracking-tight group-hover:text-foni-navy transition-colors">
                       {region.name}
                     </h2>
                     <div className="inline-flex items-center gap-2 bg-amber-50/80 px-3 py-1.5 rounded-full border border-amber-100 shrink-0">
@@ -131,7 +131,7 @@ export default async function KeanggotaanPage() {
                         <div className="flex items-center gap-2 mb-4">
                           <Map className="w-3.5 h-3.5 text-slate-700" />
                           <span className="font-bold text-slate-800 text-xs flex-1">Mapper</span>
-                          <span className="bg-[var(--color-foni-navy)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.mapper.length}</span>
+                          <span className="bg-foni-navy text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.mapper.length}</span>
                         </div>
                         <div className="space-y-4">
                           {sdm.mapper.length > 0 ? sdm.mapper.map((m, i) => (
@@ -149,7 +149,7 @@ export default async function KeanggotaanPage() {
                         <div className="flex items-center gap-2 mb-4">
                           <Navigation className="w-3.5 h-3.5 text-slate-700" />
                           <span className="font-bold text-slate-800 text-xs flex-1">Planner</span>
-                          <span className="bg-[var(--color-foni-navy)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.planner.length}</span>
+                          <span className="bg-foni-navy text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.planner.length}</span>
                         </div>
                         <div className="space-y-4">
                           {sdm.planner.length > 0 ? sdm.planner.map((m, i) => (
@@ -167,7 +167,7 @@ export default async function KeanggotaanPage() {
                         <div className="flex items-center gap-2 mb-4">
                           <CheckCircle2 className="w-3.5 h-3.5 text-slate-700" />
                           <span className="font-bold text-slate-800 text-xs flex-1">Adviser</span>
-                          <span className="bg-[var(--color-foni-navy)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.adviser.length}</span>
+                          <span className="bg-foni-navy text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.adviser.length}</span>
                         </div>
                         <div className="space-y-4">
                           {sdm.adviser.length > 0 ? sdm.adviser.map((m, i) => (
@@ -191,23 +191,23 @@ export default async function KeanggotaanPage() {
                     {regionClubs.length > 0 ? (
                       <div className="relative">
                         <div
-                          className={`flex flex-col gap-2.5 ${shouldScrollClubs ? "max-h-[360px] overflow-y-auto pr-1 hide-scrollbar" : ""}`}
+                          className={`flex flex-col gap-2.5 ${shouldScrollClubs ? "max-h-90 overflow-y-auto pr-1 hide-scrollbar" : ""}`}
                         >
                         {regionClubs.map(club => (
                           <Link 
                             key={club.id} 
                             href={`/keanggotaan/${club.id}`} 
-                            className="group/club flex items-center justify-between px-5 py-3.5 rounded-[1rem] bg-white border border-slate-100 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:border-[var(--color-foni-navy)] hover:shadow-md transition-all duration-300"
+                            className="group/club flex items-center justify-between px-5 py-3.5 rounded-2xl bg-white border border-slate-100 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:border-foni-navy hover:shadow-md transition-all duration-300"
                           >
                             <div className="flex items-center gap-4">
                               <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center shrink-0">
-                                <Users className="w-4 h-4 text-[var(--color-foni-orange)]" />
+                                <Users className="w-4 h-4 text-foni-orange" />
                               </div>
                               <div className="flex flex-col">
-                                <p className="font-bold text-slate-900 text-sm group-hover/club:text-[var(--color-foni-navy)] transition-colors">
+                                <p className="font-bold text-slate-900 text-sm group-hover/club:text-foni-navy transition-colors">
                                   {club.name}
                                 </p>
-                                <p className="text-[10px] text-[var(--color-foni-navy)] font-bold uppercase tracking-widest mt-0.5 opacity-0 -translate-x-2 group-hover/club:opacity-100 group-hover/club:translate-x-0 transition-all duration-300">
+                                <p className="text-[10px] text-foni-navy font-bold uppercase tracking-widest mt-0.5 opacity-0 -translate-x-2 group-hover/club:opacity-100 group-hover/club:translate-x-0 transition-all duration-300">
                                   Lihat Detail
                                 </p>
                               </div>
@@ -217,17 +217,17 @@ export default async function KeanggotaanPage() {
                               <div className="hidden sm:flex bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
                                 <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{club.athletes.length} Atlet</span>
                               </div>
-                              <ChevronRight className="w-4 h-4 text-slate-300 group-hover/club:text-[var(--color-foni-navy)] group-hover/club:translate-x-1 transition-all" />
+                              <ChevronRight className="w-4 h-4 text-slate-300 group-hover/club:text-foni-navy group-hover/club:translate-x-1 transition-all" />
                             </div>
                           </Link>
                         ))}
                         </div>
                         {shouldScrollClubs && (
-                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent rounded-b-[1rem]" />
+                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-linear-to-t from-white to-transparent rounded-b-2xl" />
                         )}
                       </div>
                     ) : (
-                      <div className="p-5 rounded-[1rem] bg-slate-50 border border-slate-100 border-dashed text-center">
+                      <div className="p-5 rounded-2xl bg-slate-50 border border-slate-100 border-dashed text-center">
                         <p className="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Belum ada data klub</p>
                       </div>
                     )}

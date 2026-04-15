@@ -14,11 +14,16 @@ export default async function BeritaDetailPage({
   const { slug } = await params;
 
   // Fetch single news article from Supabase
-  const { data: article } = await supabase
+  const { data: article, error } = await supabase
     .from('berita')
     .select('*')
     .eq('slug', slug)
     .single();
+
+  if (error) {
+    console.error("Failed to fetch article:", error);
+    notFound();
+  }
 
   if (!article) {
     notFound();
@@ -37,9 +42,9 @@ export default async function BeritaDetailPage({
       {/* Breadcrumbs */}
       <div className="max-w-4xl mx-auto px-6 mb-8">
         <div className="flex items-center gap-2 text-sm font-medium text-slate-500">
-          <Link href="/" className="hover:text-[var(--color-foni-navy)] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-foni-navy transition-colors">Home</Link>
           <ChevronRight className="w-4 h-4" />
-          <Link href="/berita" className="hover:text-[var(--color-foni-navy)] transition-colors">Berita</Link>
+          <Link href="/berita" className="hover:text-foni-navy transition-colors">Berita</Link>
           <ChevronRight className="w-4 h-4" />
           <span className="text-slate-900 truncate">{article.title}</span>
         </div>
@@ -49,7 +54,7 @@ export default async function BeritaDetailPage({
         {/* Article Header */}
         <header className="mb-12">
           <div className="flex items-center gap-3 mb-6">
-            <span className="px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-bold text-[var(--color-foni-navy)] uppercase tracking-widest">
+            <span className="px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-bold text-foni-navy uppercase tracking-widest">
               {article.category}
             </span>
             <span className="text-sm font-bold text-slate-400 flex items-center gap-2">
@@ -80,7 +85,7 @@ export default async function BeritaDetailPage({
         </header>
 
         {/* Featured Image */}
-        <div className="relative w-full aspect-video rounded-[2rem] overflow-hidden bg-slate-100 mb-12 shadow-lg border border-slate-200">
+        <div className="relative w-full aspect-video rounded-4xl overflow-hidden bg-slate-100 mb-12 shadow-lg border border-slate-200">
           <Image 
             src={article.image} 
             alt={article.title}
@@ -118,7 +123,7 @@ export default async function BeritaDetailPage({
         <div className="mt-12 text-center">
           <Link 
             href="/berita" 
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-[var(--color-foni-navy)] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-foni-navy transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
           >
             <ArrowLeft className="w-4 h-4" />
             Kembali ke Indeks Berita

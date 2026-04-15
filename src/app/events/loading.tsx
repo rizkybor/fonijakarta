@@ -15,12 +15,12 @@ export default function LoadingEvents() {
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-64 h-8 bg-slate-200 rounded-xl"></div>
-            <div className="h-[2px] flex-1 bg-slate-200"></div>
+            <div className="h-0.5 flex-1 bg-slate-200"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-[2rem] border border-slate-100 flex flex-col overflow-hidden h-[500px]">
+              <div key={i} className="bg-white rounded-4xl border border-slate-100 flex flex-col overflow-hidden h-[500px]">
                 {/* Image Placeholder */}
                 <div className="w-full h-60 bg-slate-200 p-3 shrink-0">
                   <div className="w-full h-full bg-slate-300 rounded-[1.25rem]"></div>
@@ -53,10 +53,10 @@ export default function LoadingEvents() {
         <div>
           <div className="flex items-center gap-4 mb-10">
             <div className="w-64 h-8 bg-slate-200 rounded-xl"></div>
-            <div className="h-[2px] flex-1 bg-slate-200"></div>
+            <div className="h-0.5 flex-1 bg-slate-200"></div>
           </div>
           
-          <div className="bg-white rounded-[2rem] border border-slate-200 p-6 md:p-10 shadow-sm">
+          <div className="bg-white rounded-4xl border border-slate-200 p-6 md:p-10 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[1, 2, 3, 4].map((i) => (
                  <div key={i} className="flex flex-col sm:flex-row gap-6 p-6 rounded-2xl border border-slate-100 bg-slate-50 items-start sm:items-center justify-between">

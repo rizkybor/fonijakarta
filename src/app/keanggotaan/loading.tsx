@@ -5,9 +5,9 @@ export default function LoadingKeanggotaan() {
       <section className="relative pt-32 pb-24 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center justify-center gap-4 mb-6">
-            <div className="w-8 h-[2px] bg-slate-200"></div>
+            <div className="w-8 h-0.5 bg-slate-200"></div>
             <div className="w-32 h-4 bg-slate-200 rounded-md"></div>
-            <div className="w-8 h-[2px] bg-slate-200"></div>
+            <div className="w-8 h-0.5 bg-slate-200"></div>
           </div>
           
           <div className="w-3/4 md:w-1/2 h-16 md:h-20 bg-slate-200 rounded-3xl mx-auto mb-8"></div>
@@ -22,7 +22,7 @@ export default function LoadingKeanggotaan() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {[1, 2, 3, 4, 5, 6].map((idx) => (
-              <div key={idx} className="bg-white rounded-[2rem] p-8 md:p-10 border border-slate-200 shadow-sm flex flex-col h-[600px]">
+              <div key={idx} className="bg-white rounded-4xl p-8 md:p-10 border border-slate-200 shadow-sm flex flex-col h-[600px]">
                 {/* Region Header Skeleton */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-100">
                   <div className="w-48 h-8 bg-slate-200 rounded-xl"></div>
@@ -57,7 +57,7 @@ export default function LoadingKeanggotaan() {
 
                   <div className="flex flex-col gap-2.5">
                     {[1, 2, 3].map((clubIdx) => (
-                      <div key={clubIdx} className="flex items-center justify-between px-5 py-3.5 rounded-[1rem] bg-white border border-slate-100 shadow-sm">
+                      <div key={clubIdx} className="flex items-center justify-between px-5 py-3.5 rounded-2xl bg-white border border-slate-100 shadow-sm">
                         <div className="flex items-center gap-4">
                           <div className="w-8 h-8 rounded-full bg-slate-200 shrink-0"></div>
                           <div className="w-32 h-5 bg-slate-200 rounded"></div>

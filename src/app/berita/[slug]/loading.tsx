@@ -29,7 +29,7 @@ export default function LoadingBeritaDetail() {
           </div>
         </header>
 
-        <div className="w-full aspect-video bg-slate-200 rounded-[2rem] mb-12 border border-slate-200"></div>
+        <div className="w-full aspect-video bg-slate-200 rounded-4xl mb-12 border border-slate-200"></div>
 
         <div className="space-y-6 mb-16">
           <div className="w-full h-6 bg-slate-200 rounded-xl"></div>

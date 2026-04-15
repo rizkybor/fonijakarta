@@ -14,12 +14,12 @@ export default function ContactPage() {
         {/* 1. Minimalist Header */}
         <section className="mb-20 text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center justify-center gap-4 mb-6">
-            <div className="w-8 h-[2px] bg-[var(--color-foni-orange)]"></div>
+            <div className="w-8 h-0.5 bg-foni-orange"></div>
             <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Pusat Bantuan</span>
-            <div className="w-8 h-[2px] bg-[var(--color-foni-orange)]"></div>
+            <div className="w-8 h-0.5 bg-foni-orange"></div>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tighter leading-[1.1]">
-            Hubungi <span className="text-[var(--color-foni-navy)]">Kami</span>
+            Hubungi <span className="text-foni-navy">Kami</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed">
             Punya pertanyaan seputar orienteering di Jakarta? Ingin mendaftarkan klub Anda? Jangan ragu untuk mengirim pesan kepada kami.
@@ -37,8 +37,8 @@ export default function ContactPage() {
               
               <div className="space-y-8">
                 <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-2xl bg-[var(--color-foni-navy)]/5 flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-[var(--color-foni-navy)]" />
+                  <div className="w-12 h-12 rounded-2xl bg-foni-navy/5 flex items-center justify-center shrink-0">
+                    <MapPin className="w-6 h-6 text-foni-navy" />
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-800 mb-2 text-sm uppercase tracking-widest">Sekretariat</h3>
@@ -51,8 +51,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-2xl bg-[var(--color-foni-orange)]/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-[var(--color-foni-orange)]" />
+                  <div className="w-12 h-12 rounded-2xl bg-foni-orange/10 flex items-center justify-center shrink-0">
+                    <Phone className="w-6 h-6 text-foni-orange" />
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-800 mb-2 text-sm uppercase tracking-widest">Telepon / WA</h3>
@@ -73,10 +73,10 @@ export default function ContactPage() {
 
               {/* Social Media Links */}
               <div className="mt-10 pt-8 border-t border-slate-100 flex flex-wrap gap-3 sm:gap-4">
-                <a href="#" className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 text-sm font-bold text-slate-500 hover:text-[var(--color-foni-navy)] hover:bg-[var(--color-foni-navy)]/5 transition-all">
+                <a href="#" className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 text-sm font-bold text-slate-500 hover:text-foni-navy hover:bg-foni-navy/5 transition-all">
                   Instagram <ExternalLink className="w-4 h-4" />
                 </a>
-                <a href="#" className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 text-sm font-bold text-slate-500 hover:text-[var(--color-foni-navy)] hover:bg-[var(--color-foni-navy)]/5 transition-all">
+                <a href="#" className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 text-sm font-bold text-slate-500 hover:text-foni-navy hover:bg-foni-navy/5 transition-all">
                   Facebook <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
@@ -112,7 +112,7 @@ export default function ContactPage() {
                     name="name" 
                     defaultValue="" 
                     placeholder="Masukkan nama Anda"
-                    className="w-full px-5 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:bg-white focus:ring-2 focus:ring-[var(--color-foni-navy)]/20 focus:border-[var(--color-foni-navy)] outline-none transition-all text-slate-700 font-medium"
+                    className="w-full px-5 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:bg-white focus:ring-2 focus:ring-foni-navy/20 focus:border-foni-navy outline-none transition-all text-slate-700 font-medium"
                     required
                   />
                 </div>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                     name="email" 
                     defaultValue="" 
                     placeholder="nama@email.com"
-                    className="w-full px-5 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:bg-white focus:ring-2 focus:ring-[var(--color-foni-navy)]/20 focus:border-[var(--color-foni-navy)] outline-none transition-all text-slate-700 font-medium"
+                    className="w-full px-5 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:bg-white focus:ring-2 focus:ring-foni-navy/20 focus:border-foni-navy outline-none transition-all text-slate-700 font-medium"
                     required
                   />
                 </div>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                   name="subject" 
                   defaultValue="" 
                   placeholder="Apa yang ingin Anda tanyakan?"
-                  className="w-full px-5 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:bg-white focus:ring-2 focus:ring-[var(--color-foni-navy)]/20 focus:border-[var(--color-foni-navy)] outline-none transition-all text-slate-700 font-medium"
+                  className="w-full px-5 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:bg-white focus:ring-2 focus:ring-foni-navy/20 focus:border-foni-navy outline-none transition-all text-slate-700 font-medium"
                   required
                 />
               </div>
@@ -149,14 +149,14 @@ export default function ContactPage() {
                   rows={6}
                   defaultValue="" 
                   placeholder="Tulis pesan detail Anda di sini..."
-                  className="w-full px-5 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:bg-white focus:ring-2 focus:ring-[var(--color-foni-navy)]/20 focus:border-[var(--color-foni-navy)] outline-none transition-all text-slate-700 font-medium resize-none"
+                  className="w-full px-5 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:bg-white focus:ring-2 focus:ring-foni-navy/20 focus:border-foni-navy outline-none transition-all text-slate-700 font-medium resize-none"
                   required
                 ></textarea>
               </div>
               <div className="pt-4">
                 <button 
                   type="submit" 
-                  className="w-full md:w-auto bg-[var(--color-foni-navy)] text-white font-bold px-10 py-4 rounded-2xl hover:bg-slate-800 transition-all hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-3"
+                  className="w-full md:w-auto bg-foni-navy text-white font-bold px-10 py-4 rounded-2xl hover:bg-slate-800 transition-all hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-3"
                 >
                   Kirim Pesan <Send className="w-5 h-5" />
                 </button>

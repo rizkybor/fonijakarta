@@ -18,7 +18,7 @@ export default function LoadingClubDetail() {
               <div className="w-40 h-8 bg-slate-200 rounded-full"></div>
             </div>
 
-            <div className="bg-slate-200 px-8 py-6 rounded-[2rem] flex flex-col items-center justify-center shrink-0 min-w-[160px] h-32"></div>
+            <div className="bg-slate-200 px-8 py-6 rounded-4xl flex flex-col items-center justify-center shrink-0 min-w-[160px] h-32"></div>
           </div>
         </div>
       </section>
@@ -28,10 +28,10 @@ export default function LoadingClubDetail() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-48 h-8 bg-slate-200 rounded-xl"></div>
-            <div className="h-[2px] flex-1 bg-slate-200"></div>
+            <div className="h-0.5 flex-1 bg-slate-200"></div>
           </div>
 
-          <div className="bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden">
+          <div className="bg-white rounded-4xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>

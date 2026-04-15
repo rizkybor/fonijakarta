@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Calendar, ChevronRight, ArrowUpRight, TrendingUp, Sparkles, Tag } from "lucide-react";
 import { sponsors } from "@/lib/dummyData";
 import { supabase } from "@/lib/supabase";
@@ -21,10 +22,15 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 export default async function BeritaPage() {
   // Fetch news from Supabase
-  const { data: newsArticles } = await supabase
+  const { data: newsArticles, error } = await supabase
     .from('berita')
     .select('*')
     .order('published_at', { ascending: false });
+
+  if (error) {
+    console.error("Failed to fetch news:", error);
+    notFound();
+  }
 
   const articles = (newsArticles || []) as Berita[];
   const featuredNews = articles.filter(news => news.featured);
@@ -44,11 +50,11 @@ export default async function BeritaPage() {
       {/* 1. Header Section */}
       <section className="pt-32 pb-16 px-6 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-sm font-bold text-slate-600 mb-6 shadow-sm">
-          <Sparkles className="w-4 h-4 text-[var(--color-foni-orange)]" />
+          <Sparkles className="w-4 h-4 text-foni-orange" />
           Kabar Terbaru
         </div>
         <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter mb-6">
-          Pusat <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-foni-navy)] to-blue-600">Berita</span>
+          Pusat <span className="text-transparent bg-clip-text bg-linear-to-r from-foni-navy to-blue-600">Berita</span>
         </h1>
         <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium">
           Informasi terkini seputar kegiatan, prestasi, dan perkembangan olahraga orienteering di DKI Jakarta.
@@ -58,7 +64,7 @@ export default async function BeritaPage() {
       {/* 2. Featured News Carousel */}
       <section className="max-w-7xl mx-auto px-6 mb-16">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-8 h-[2px] bg-[var(--color-foni-orange)]"></div>
+          <div className="w-8 h-0.5 bg-foni-orange"></div>
           <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Sorotan Utama</span>
         </div>
         
@@ -67,31 +73,31 @@ export default async function BeritaPage() {
             <Link 
               href={`/berita/${news.slug}`} 
               key={news.id}
-              className="min-w-[85vw] md:min-w-[600px] lg:min-w-[800px] bg-white rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row group snap-center"
+              className="min-w-[85vw] md:min-w-150 lg:min-w-200 bg-white rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row group snap-center"
             >
-              <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto h-64 md:h-[400px] overflow-hidden bg-slate-100">
+              <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto h-64 md:h-100 overflow-hidden bg-slate-100">
                 <Image 
                   src={news.image} 
                   alt={news.title} 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold text-[var(--color-foni-navy)] shadow-sm">
+                <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold text-foni-navy shadow-sm">
                   {news.category}
                 </div>
               </div>
               <div className="w-full md:w-1/2 p-6 md:p-10 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center gap-3 text-slate-400 text-sm font-bold mb-4">
-                  <Calendar className="w-4 h-4 text-[var(--color-foni-orange)]" />
+                  <Calendar className="w-4 h-4 text-foni-orange" />
                   {formatDate(news.published_at)}
                 </div>
-                <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-tight group-hover:text-[var(--color-foni-navy)] transition-colors line-clamp-3">
+                <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-tight group-hover:text-foni-navy transition-colors line-clamp-3">
                   {news.title}
                 </h2>
                 <p className="text-slate-500 leading-relaxed mb-8 line-clamp-3">
                   {news.excerpt}
                 </p>
-                <div className="mt-auto flex items-center gap-2 text-[var(--color-foni-navy)] font-bold text-sm">
+                <div className="mt-auto flex items-center gap-2 text-foni-navy font-bold text-sm">
                   Baca Selengkapnya <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </div>
               </div>
@@ -108,7 +114,7 @@ export default async function BeritaPage() {
           <div className="lg:col-span-8">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-[2px] bg-blue-600"></div>
+                <div className="w-8 h-0.5 bg-blue-600"></div>
                 <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Berita Lainnya</span>
               </div>
             </div>
@@ -118,7 +124,7 @@ export default async function BeritaPage() {
                 <Link 
                   href={`/berita/${news.slug}`} 
                   key={news.id}
-                  className="bg-white rounded-[2rem] border border-slate-200 p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col sm:flex-row gap-6 group items-center"
+                  className="bg-white rounded-4xl border border-slate-200 p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col sm:flex-row gap-6 group items-center"
                 >
                   <div className="relative w-full sm:w-48 aspect-video rounded-2xl overflow-hidden bg-slate-100 shrink-0">
                     <Image 
@@ -130,7 +136,7 @@ export default async function BeritaPage() {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-bold text-[var(--color-foni-navy)] uppercase tracking-wider">
+                      <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-bold text-foni-navy uppercase tracking-wider">
                         {news.category}
                       </span>
                       <span className="text-xs font-bold text-slate-400 flex items-center gap-1.5">
@@ -160,23 +166,23 @@ export default async function BeritaPage() {
           <div className="lg:col-span-4 space-y-8">
             
             {/* Sponsor Banner Box */}
-            <div className="bg-white rounded-[2rem] border border-slate-200 p-8 shadow-sm text-center relative overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
+            <div className="bg-white rounded-4xl border border-slate-200 p-8 shadow-sm text-center relative overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               
-              <div className="w-16 h-16 mx-auto bg-[var(--color-foni-orange)]/10 rounded-2xl flex items-center justify-center mb-6 text-[var(--color-foni-orange)]">
+              <div className="w-16 h-16 mx-auto bg-foni-orange/10 rounded-2xl flex items-center justify-center mb-6 text-foni-orange">
                 <TrendingUp className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">Space Promosi</h3>
               <p className="text-sm text-slate-500 mb-6">
                 Jangkau ribuan audiens aktif dan dukung perkembangan olahraga orienteering di DKI Jakarta.
               </p>
-              <div className="inline-flex items-center gap-2 text-sm font-bold text-white bg-[var(--color-foni-navy)] px-6 py-3 rounded-full hover:bg-slate-800 transition-colors">
+              <div className="inline-flex items-center gap-2 text-sm font-bold text-white bg-foni-navy px-6 py-3 rounded-full hover:bg-slate-800 transition-colors">
                 Hubungi Kami <ChevronRight className="w-4 h-4" />
               </div>
             </div>
 
             {/* Categories / Tags Widget */}
-            <div className="bg-white rounded-[2rem] border border-slate-200 p-8 shadow-sm">
+            <div className="bg-white rounded-4xl border border-slate-200 p-8 shadow-sm">
               <div className="flex items-center gap-2 mb-6">
                 <Tag className="w-5 h-5 text-slate-400" />
                 <h3 className="text-lg font-bold text-slate-900">Kategori</h3>
@@ -195,7 +201,7 @@ export default async function BeritaPage() {
             </div>
 
             {/* Official Sponsor Grid */}
-            <div className="bg-white rounded-[2rem] border border-slate-200 p-8 shadow-sm">
+            <div className="bg-white rounded-4xl border border-slate-200 p-8 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-6 text-center">Mitra & Sponsor</h3>
               <div className="grid grid-cols-2 gap-4">
                 {sponsors.map((sp) => (

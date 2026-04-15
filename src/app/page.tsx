@@ -60,18 +60,18 @@ export default async function Home() {
       {/* 1. Hero Section - Centered Modern Floating */}
       <section className="pt-32 px-4 sm:px-6 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 mb-6 sm:mb-8 shadow-sm hover:shadow-md transition-shadow cursor-default">
-          <span className="w-2 h-2 rounded-full bg-[var(--color-foni-orange)] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-foni-orange animate-pulse" />
           Pengurus Provinsi DKI Jakarta
         </div>
 
         <h1 className="text-[2.75rem] leading-[1.1] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black text-slate-900 tracking-tighter md:leading-[1.05] mb-6 px-2">
           Satu{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-foni-navy)] to-blue-600">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-foni-navy to-blue-600">
             Peta
           </span>{" "}
           <br className="hidden md:block" />
           Seribu{" "}
-          <span className="text-[var(--color-foni-orange)]">Sinergi</span>
+          <span className="text-foni-orange">Sinergi</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium mb-8 sm:mb-10 px-2">
@@ -82,7 +82,7 @@ export default async function Home() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
           <Link
             href="/keanggotaan"
-            className="w-full sm:w-auto bg-[var(--color-foni-navy)] text-white px-8 py-4 rounded-full font-bold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto bg-foni-navy text-white px-8 py-4 rounded-full font-bold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 group"
           >
             Jelajahi Klub{" "}
             <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
@@ -99,7 +99,7 @@ export default async function Home() {
       {/* 2. Massive Rounded Hero Video & Floating Stats */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-12 sm:mt-16 relative z-10 mb-16 md:mb-24">
         {/* Main Video */}
-        <div className="relative w-full aspect-[4/3] md:aspect-[21/9] rounded-3xl md:rounded-[3rem] overflow-hidden bg-slate-900 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border-[4px] md:border-[6px] lg:border-8 border-white/80 ring-1 ring-slate-200 group">
+        <div className="relative w-full aspect-4/3 md:aspect-21/9 rounded-3xl md:rounded-[3rem] overflow-hidden bg-slate-900 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border-4 md:border-[6px] lg:border-8 border-white/80 ring-1 ring-slate-200 group">
           <div className="absolute inset-0 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-1000 scale-[1.3] md:scale-[1.1] group-hover:scale-[1.15]">
             <iframe
               src="https://www.youtube.com/embed/qyfDHtMqiWk?autoplay=1&mute=1&controls=0&loop=1&playlist=qyfDHtMqiWk&playsinline=1&rel=0&showinfo=0&modestbranding=1&enablejsapi=1"
@@ -119,12 +119,12 @@ export default async function Home() {
         {/* Stats Cards (Moved Below Video, Minimalist UI & Informative) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 relative z-20">
           <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
-            <span className="inline-flex w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-xl md:rounded-2xl bg-blue-50 text-[var(--color-foni-navy)] mb-4 md:mb-5 group-hover:scale-110 group-hover:bg-blue-100 transition-transform">
+            <span className="inline-flex w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-xl md:rounded-2xl bg-blue-50 text-foni-navy mb-4 md:mb-5 group-hover:scale-110 group-hover:bg-blue-100 transition-transform">
               <Users className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2} />
             </span>
             <div className="font-black text-3xl sm:text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
               {athletesCount ?? 0}
-              <span className="text-[var(--color-foni-orange)] text-[0.6em] align-super">
+              <span className="text-foni-orange text-[0.6em] align-super">
                 +
               </span>
             </div>
@@ -137,7 +137,7 @@ export default async function Home() {
           </div>
 
           <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
-            <span className="inline-flex w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-xl md:rounded-2xl bg-orange-50 text-[var(--color-foni-orange)] mb-4 md:mb-5 group-hover:scale-110 group-hover:bg-orange-100 transition-transform">
+            <span className="inline-flex w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-xl md:rounded-2xl bg-orange-50 text-foni-orange mb-4 md:mb-5 group-hover:scale-110 group-hover:bg-orange-100 transition-transform">
               <Flag className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2} />
             </span>
             <div className="font-black text-3xl sm:text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
@@ -153,7 +153,7 @@ export default async function Home() {
           </div>
 
           <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
-            <span className="inline-flex w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-xl md:rounded-2xl bg-blue-50 text-[var(--color-foni-navy)] mb-4 md:mb-5 group-hover:scale-110 group-hover:bg-blue-100 transition-transform">
+            <span className="inline-flex w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-xl md:rounded-2xl bg-blue-50 text-foni-navy mb-4 md:mb-5 group-hover:scale-110 group-hover:bg-blue-100 transition-transform">
               <Map className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2} />
             </span>
             <div className="font-black text-3xl sm:text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
@@ -168,7 +168,7 @@ export default async function Home() {
           </div>
 
           <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg hover:shadow-slate-200/50 flex flex-col items-center text-center transition-all duration-300 group">
-            <span className="inline-flex w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-xl md:rounded-2xl bg-orange-50 text-[var(--color-foni-orange)] mb-4 md:mb-5 group-hover:scale-110 group-hover:bg-orange-100 transition-transform">
+            <span className="inline-flex w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-xl md:rounded-2xl bg-orange-50 text-foni-orange mb-4 md:mb-5 group-hover:scale-110 group-hover:bg-orange-100 transition-transform">
               <Trophy className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2} />
             </span>
             <div className="font-black text-3xl sm:text-4xl md:text-5xl text-slate-900 leading-[1.1] tracking-tighter">
@@ -196,11 +196,11 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             {/* Left Col: Image Mosaic/Visual */}
-            <div className="relative w-full max-w-[400px] mx-auto lg:max-w-none">
-              <div className="absolute top-4 sm:top-10 -left-4 sm:-left-10 w-24 sm:w-40 h-24 sm:h-40 bg-[var(--color-foni-orange)]/10 rounded-full blur-2xl sm:blur-3xl overflow-hidden"></div>
-              <div className="absolute bottom-4 sm:bottom-10 -right-4 sm:-right-10 w-24 sm:w-40 h-24 sm:h-40 bg-[var(--color-foni-navy)]/10 rounded-full blur-2xl sm:blur-3xl overflow-hidden"></div>
+            <div className="relative w-full max-w-100 mx-auto lg:max-w-none">
+              <div className="absolute top-4 sm:top-10 -left-4 sm:-left-10 w-24 sm:w-40 h-24 sm:h-40 bg-foni-orange/10 rounded-full blur-2xl sm:blur-3xl overflow-hidden"></div>
+              <div className="absolute bottom-4 sm:bottom-10 -right-4 sm:-right-10 w-24 sm:w-40 h-24 sm:h-40 bg-foni-navy/10 rounded-full blur-2xl sm:blur-3xl overflow-hidden"></div>
 
-              <div className="relative w-full aspect-[4/5] md:aspect-square bg-slate-200 rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl">
+              <div className="relative w-full aspect-4/5 md:aspect-square bg-slate-200 rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=2070&auto=format&fit=crop"
                   alt="Tentang FONI DKI"
@@ -210,7 +210,7 @@ export default async function Home() {
 
                 {/* Decorative Elements */}
                 <div className="absolute top-4 left-4 sm:top-8 sm:left-8 bg-white/90 backdrop-blur-md px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg border border-white/20">
-                  <div className="text-xl sm:text-3xl font-black text-[var(--color-foni-navy)] tracking-tighter">
+                  <div className="text-xl sm:text-3xl font-black text-foni-navy tracking-tighter">
                     2023
                   </div>
                   <div className="text-[8px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">
@@ -223,7 +223,7 @@ export default async function Home() {
             {/* Right Col: Text Content */}
             <div className="flex flex-col justify-center px-2 sm:px-0">
               <div className="inline-flex items-center gap-3 mb-6">
-                <div className="w-8 h-[2px] bg-[var(--color-foni-orange)]"></div>
+                <div className="w-8 h-0.5 bg-foni-orange"></div>
                 <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">
                   Tentang Kami
                 </span>
@@ -231,7 +231,7 @@ export default async function Home() {
 
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-[1.15]">
                 Menjadi Barometer <br />
-                <span className="text-[var(--color-foni-navy)]">
+                <span className="text-foni-navy">
                   Orienteering Nasional
                 </span>
               </h2>
@@ -269,7 +269,7 @@ export default async function Home() {
 
               <Link
                 href="/profil"
-                className="w-fit bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[var(--color-foni-navy)] transition-all flex items-center gap-3 group shadow-lg hover:shadow-xl hover:-translate-y-1"
+                className="w-fit bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-foni-navy transition-all flex items-center gap-3 group shadow-lg hover:shadow-xl hover:-translate-y-1"
               >
                 Susunan Pengurus{" "}
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
@@ -288,9 +288,9 @@ export default async function Home() {
           {partners.map((partner) => (
             <div
               key={partner.id}
-              className="bg-slate-50 px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-slate-100 group flex items-center justify-center hover:bg-white hover:border-[var(--color-foni-navy)] hover:shadow-md transition-all duration-300 cursor-default"
+              className="bg-slate-50 px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-slate-100 group flex items-center justify-center hover:bg-white hover:border-foni-navy hover:shadow-md transition-all duration-300 cursor-default"
             >
-              <span className="text-base sm:text-xl md:text-2xl font-bold text-slate-700 tracking-tight group-hover:text-[var(--color-foni-navy)] transition-colors">
+              <span className="text-base sm:text-xl md:text-2xl font-bold text-slate-700 tracking-tight group-hover:text-foni-navy transition-colors">
                 {partner.name}
               </span>
             </div>
@@ -303,7 +303,7 @@ export default async function Home() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12 px-2 sm:px-0">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-[2px] bg-[var(--color-foni-orange)]"></div>
+              <div className="w-8 h-0.5 bg-foni-orange"></div>
               <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">
                 Agenda
               </span>
@@ -314,7 +314,7 @@ export default async function Home() {
           </div>
           <Link
             href="/events"
-            className="flex items-center gap-2 text-[var(--color-foni-navy)] font-bold hover:text-[var(--color-foni-orange)] transition-colors group bg-slate-50 px-6 py-3 rounded-full border border-slate-100 hover:border-slate-200 w-fit"
+            className="flex items-center gap-2 text-foni-navy font-bold hover:text-foni-orange transition-colors group bg-slate-50 px-6 py-3 rounded-full border border-slate-100 hover:border-slate-200 w-fit"
           >
             Semua Jadwal{" "}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -326,7 +326,7 @@ export default async function Home() {
             {upcomingEvents.map((evt) => (
               <div
                 key={evt.id}
-                className="min-w-[320px] md:min-w-[380px] w-[85vw] md:w-[380px] shrink-0 snap-start bg-white rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
+                className="min-w-[320px] md:min-w-95 w-[85vw] md:w-95 shrink-0 snap-start bg-white rounded-4xl border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
               >
                 <div className="relative h-56 bg-slate-100 overflow-hidden">
                   <Image
@@ -339,17 +339,17 @@ export default async function Home() {
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   {evt.status === "registration_open" && (
-                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold text-[var(--color-foni-navy)] shadow-sm flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[var(--color-foni-orange)] animate-pulse"></span>
+                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold text-foni-navy shadow-sm flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-foni-orange animate-pulse"></span>
                       Daftar Buka
                     </div>
                   )}
                 </div>
                 <div className="p-8 flex flex-col flex-1">
-                  <div className="flex items-center gap-3 text-[var(--color-foni-orange)] font-bold text-xs uppercase tracking-widest mb-4">
+                  <div className="flex items-center gap-3 text-foni-orange font-bold text-xs uppercase tracking-widest mb-4">
                     <Calendar className="w-4 h-4" /> {evt.date}
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6 leading-tight group-hover:text-[var(--color-foni-navy)] transition-colors line-clamp-2">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 leading-tight group-hover:text-foni-navy transition-colors line-clamp-2">
                     {evt.title}
                   </h3>
                   <div className="mt-auto space-y-4">
@@ -373,7 +373,7 @@ export default async function Home() {
             ))}
           </div>
         ) : (
-          <div className="bg-slate-50 border border-slate-200 rounded-[2rem] p-10 text-center">
+          <div className="bg-slate-50 border border-slate-200 rounded-4xl p-10 text-center">
             <p className="text-sm font-bold text-slate-600">
               Belum ada kegiatan mendatang.
             </p>
@@ -393,7 +393,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-10 sm:mb-12 px-2 sm:px-0">
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white border border-slate-200 text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 sm:mb-6 shadow-sm">
-              <Timer className="w-3 h-3 sm:w-4 sm:h-4 text-[var(--color-foni-orange)]" />{" "}
+              <Timer className="w-3 h-3 sm:w-4 sm:h-4 text-foni-orange" />{" "}
               Teknologi Pewaktuan
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
@@ -403,13 +403,13 @@ export default async function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Main Bento */}
-            <div className="lg:col-span-2 rounded-[2rem] p-6 sm:p-8 md:p-12 text-white relative overflow-hidden flex flex-col justify-center group shadow-lg min-h-[300px] sm:min-h-[400px]">
+            <div className="lg:col-span-2 rounded-4xl p-6 sm:p-8 md:p-12 text-white relative overflow-hidden flex flex-col justify-center group shadow-lg min-h-75 sm:min-h-100">
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-15"
                 style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1555696958-c5049b866f6f?q=80&w=2074&auto=format&fit=crop)' }}
               ></div>
               <div className="absolute inset-0 bg-[#0F172A]/90 mix-blend-multiply"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A]/95 via-[#1E3A8A]/80 to-[#1E3A8A]/90"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-[#0F172A]/95 via-[#1E3A8A]/80 to-[#1E3A8A]/90"></div>
               
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 z-10 tracking-tight">
                 SPORTident Official
@@ -431,9 +431,9 @@ export default async function Home() {
 
             {/* Small Bentos */}
             <div className="flex flex-col gap-6">
-              <div className="bg-white rounded-[2rem] p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex-1">
+              <div className="bg-white rounded-4xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex-1">
                 <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
-                  <Activity className="w-6 h-6 text-[var(--color-foni-orange)]" />
+                  <Activity className="w-6 h-6 text-foni-orange" />
                 </div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">
                   Akurasi Milidetik
@@ -444,7 +444,7 @@ export default async function Home() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-[2rem] p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex-1">
+              <div className="bg-white rounded-4xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex-1">
                 <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
                   <ShieldCheck className="w-6 h-6 text-blue-600" />
                 </div>
@@ -459,7 +459,7 @@ export default async function Home() {
             </div>
 
             {/* Bottom Bento */}
-            <div className="lg:col-span-3 bg-white rounded-[2rem] p-6 sm:p-8 md:p-10 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row items-center gap-6 sm:gap-8 justify-between">
+            <div className="lg:col-span-3 bg-white rounded-4xl p-6 sm:p-8 md:p-10 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row items-center gap-6 sm:gap-8 justify-between">
               <div className="flex-1 text-center md:text-left">
                 <h4 className="text-2xl font-bold text-slate-900 mb-2">
                   Live Results & Printout

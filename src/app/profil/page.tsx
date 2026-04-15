@@ -13,12 +13,12 @@ export default function ProfilPage() {
         {/* Header Minimalis */}
         <div className="mb-24 max-w-3xl">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-[2px] bg-[var(--color-foni-navy)]"></div>
+            <div className="w-12 h-0.5 bg-foni-navy"></div>
             <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Organisasi</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 tracking-tight">
             Susunan <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-foni-navy)] to-blue-600">Pengurus Daerah</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-foni-navy to-blue-600">Pengurus Daerah</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-light">
             Mengenal lebih dekat sosok-sosok di balik pengembangan olahraga orienteering di Provinsi DKI Jakarta untuk masa bakti 2026-2030.
@@ -36,7 +36,7 @@ export default function ProfilPage() {
               <div className="w-full md:w-1/3 shrink-0">
                 <div className="sticky top-24">
                   <h2 className={`text-xl font-bold uppercase tracking-wider ${
-                    index === 0 ? 'text-[var(--color-foni-navy)]' :
+                    index === 0 ? 'text-foni-navy' :
                     'text-slate-400 group-hover:text-slate-900 transition-colors'
                   }`}>
                     {group.level}
