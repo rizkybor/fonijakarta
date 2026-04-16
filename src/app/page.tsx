@@ -61,24 +61,23 @@ export default async function Home() {
       <section className="pt-32 px-4 sm:px-6 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 mb-6 sm:mb-8 shadow-sm hover:shadow-md transition-shadow cursor-default">
           <span className="w-2 h-2 rounded-full bg-foni-orange animate-pulse" />
-          Pengurus Provinsi DKI Jakarta
+           Situs Resmi FONI Pengprov DKI Jakarta
         </div>
 
-        <h1 className="text-[2.75rem] leading-[1.1] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black text-slate-900 tracking-tighter md:leading-[1.05] mb-6 px-2">
+        <h1 className="text-[3.5rem] leading-[0.9] sm:text-6xl md:text-7xl lg:text-[5rem] text-slate-900 tracking-tighter md:leading-[0.9] mb-6 px-2 uppercase transform -skew-x-6 drop-shadow-sm font-(family-name:--font-russo-one)">
           Satu{" "}
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-foni-navy to-blue-600">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-foni-navy via-blue-700 to-cyan-500 drop-shadow-md">
             Peta
           </span>{" "}
           <br className="hidden md:block" />
           Seribu{" "}
-          <span className="text-foni-orange">Sinergi</span>
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-foni-orange to-red-600 drop-shadow-md">Sinergi</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium mb-8 sm:mb-10 px-2">
-          Membangun dan mengembangkan olahraga orienteering di Ibukota. Cerdas
-          bernavigasi, tangguh berlari, dan menjunjung tinggi sportivitas.
+         Menyediakan informasi seputar event & kompetisi bertaraf Daerah, Nasional serta Internasional, Klub klub terdaftar hingga berita berita perkembangan orienteering di DKI Jakarta maupun Nasional.
         </p>
-
+       
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
           <Link
             href="/keanggotaan"
@@ -144,10 +143,10 @@ export default async function Home() {
               {clubsCount ?? 0}
             </div>
             <div className="mt-2 text-[10px] md:text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
-              Klub FONI
+              Klub Klub Terdaftar
             </div>
             <p className="mt-2 md:mt-3 text-[10px] md:text-xs text-slate-500 leading-relaxed hidden sm:block">
-              Klub orientering aktif yang tersebar di 5 wilayah kota
+              Klub orientering terdaftar di DKI yang tersebar di 5 wilayah kota
               administrasi.
             </p>
           </div>
@@ -160,10 +159,10 @@ export default async function Home() {
               {mapsCount ?? 0}
             </div>
             <div className="mt-2 text-[10px] md:text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
-              Peta IOF
+              Peta Peta di Wilayah DKI
             </div>
             <p className="mt-2 md:mt-3 text-[10px] md:text-xs text-slate-500 leading-relaxed hidden sm:block">
-              Peta berstandar internasional untuk kompetisi dan latihan rutin.
+              Wilayah yang sudah dipetakan untuk kompetisi dan latihan rutin.
             </p>
           </div>
 
@@ -175,10 +174,10 @@ export default async function Home() {
               {eventsSuccessCount ?? 0}
             </div>
             <div className="mt-2 text-[10px] md:text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
-              Event Sukses
+              Event & Kompetisi
             </div>
             <p className="mt-2 md:mt-3 text-[10px] md:text-xs text-slate-500 leading-relaxed hidden sm:block">
-              Kompetisi daerah dan nasional yang berhasil diselenggarakan.
+              Event maupun Kompetisi yang berhasil diselenggarakan oleh FONI DKI.
             </p>
           </div>
         </div>
@@ -202,7 +201,7 @@ export default async function Home() {
 
               <div className="relative w-full aspect-4/5 md:aspect-square bg-slate-200 rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=2070&auto=format&fit=crop"
+                  src="/logo/LOGO_FONI_DKI.jpg"
                   alt="Tentang FONI DKI"
                   fill
                   className="object-cover"
@@ -211,10 +210,10 @@ export default async function Home() {
                 {/* Decorative Elements */}
                 <div className="absolute top-4 left-4 sm:top-8 sm:left-8 bg-white/90 backdrop-blur-md px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg border border-white/20">
                   <div className="text-xl sm:text-3xl font-black text-foni-navy tracking-tighter">
-                    2023
+                    2019
                   </div>
                   <div className="text-[8px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                    Tahun Berdiri
+                    Tahun Di Deklarasikan
                   </div>
                 </div>
               </div>
@@ -251,9 +250,9 @@ export default async function Home() {
 
               <ul className="space-y-4 mb-10">
                 {[
-                  "Pembinaan Atlet Berkelanjutan",
-                  "Standarisasi Peta IOF",
-                  "Sistem Kompetisi Profesional",
+                  "Pendataan Klub serta Pembinaan Atlet Berkelanjutan",
+                  "Standarisasi Peta",
+                  "Sistem Penyelenggaraan Kompetisi",
                 ].map((item, i) => (
                   <li
                     key={i}
