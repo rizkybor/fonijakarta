@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: "FONI DKI Jakarta - Satu Peta Seribu Sinergi",
     template: "%s | FONI DKI Jakarta",
   },
-  description: "Situs resmi Federasi Orienteering Nasional Indonesia (FONI) Pengurus Provinsi DKI Jakarta. Informasi kompetisi, database atlet, dan pengembangan olahraga navigasi darat.",
+  description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengprov DKI Jakarta. Informasi event & kompetisi, klub klub terdaftar dan berita.",
   keywords: ["Orienteering Jakarta", "FONI", "FONI DKI", "FONI pengprov DKI", "KORMI DKI", "Navigasi Darat", "Event Orienteering", "Orienteering Indonesia", "Orienteering"],
   authors: [{ name: "FONI DKI Jakarta" }],
   creator: "FONI DKI Jakarta",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: "https://fonijakarta.web.id",
     title: "FONI DKI Jakarta - Satu Peta Seribu Sinergi",
-    description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengurus Provinsi DKI Jakarta. Informasi kompetisi, database atlet, dan pengembangan olahraga navigasi darat.",
+    description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengprov DKI Jakarta. Informasi event & kompetisi, klub klub terdaftar dan berita.",
     siteName: "FONI DKI Jakarta",
     images: [
       {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "FONI DKI Jakarta - Satu Peta Seribu Sinergi",
-    description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengurus Provinsi DKI Jakarta. Informasi kompetisi, database atlet, dan pengembangan olahraga navigasi darat.",
+    description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengprov DKI Jakarta. Informasi event & kompetisi, klub klub terdaftar dan berita.",
     images: ["https://fonijakarta.web.id/logo/LOGO_FONI_DKI.jpg"],
   },
   robots: {
