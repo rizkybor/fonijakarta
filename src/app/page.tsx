@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { partners } from "@/lib/dummyData";
 import { supabase } from "@/lib/supabase";
+import HeroVideo from "@/components/home/HeroVideo";
 
 export const revalidate = 60;
 
@@ -99,22 +100,7 @@ export default async function Home() {
       {/* 2. Massive Rounded Hero Video & Floating Stats */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-12 sm:mt-16 relative z-10 mb-16 md:mb-24">
         {/* Main Video */}
-        <div className="relative w-full aspect-4/3 md:aspect-21/9 rounded-3xl md:rounded-[3rem] overflow-hidden bg-slate-900 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border-4 md:border-[6px] lg:border-8 border-white/80 ring-1 ring-slate-200 group">
-          <div className="absolute inset-0 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-1000 scale-[1.3] md:scale-[1.1] group-hover:scale-[1.15]">
-            <iframe
-              src="https://www.youtube.com/embed/qyfDHtMqiWk?autoplay=1&mute=1&controls=0&loop=1&playlist=qyfDHtMqiWk&playsinline=1&rel=0&showinfo=0&modestbranding=1&enablejsapi=1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              title="YouTube video player"
-              className="absolute top-1/2 left-1/2 w-[150%] h-[150%] md:w-[120%] md:h-[120%] -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover"
-            ></iframe>
-          </div>
-          <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply pointer-events-none"></div>
-
-          {/* Inner shadow overlay for depth */}
-          <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.2)] pointer-events-none rounded-[2.2rem] md:rounded-[2.6rem]"></div>
-        </div>
+        <HeroVideo />
 
         {/* Stats Cards (Moved Below Video, Minimalist UI & Informative) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 relative z-20">
