@@ -11,6 +11,7 @@ import {
   Activity,
   ShieldCheck,
   Timer,
+  Medal,
 } from "lucide-react";
 import { partners } from "@/lib/dummyData";
 import { supabase } from "@/lib/supabase";
@@ -201,16 +202,16 @@ export default async function Home() {
 
               <div className="relative w-full aspect-4/5 md:aspect-square bg-slate-200 rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl">
                 <Image
-                  src="/logo/LOGO_FONI_DKI.jpg"
+                  src="/logo/logo-foni.png"
                   alt="Tentang FONI DKI"
                   fill
-                  className="object-cover"
+                  className="object-contain p-6 sm:p-10 md:p-12"
                 />
 
                 {/* Decorative Elements */}
                 <div className="absolute top-4 left-4 sm:top-8 sm:left-8 bg-white/90 backdrop-blur-md px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg border border-white/20">
                   <div className="text-xl sm:text-3xl font-black text-foni-navy tracking-tighter">
-                    2019
+                    2018
                   </div>
                   <div className="text-[8px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                     Tahun Di Deklarasikan
@@ -283,13 +284,23 @@ export default async function Home() {
         <p className="text-center text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8 sm:mb-10">
           Didukung & Terafiliasi Dengan
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-20 opacity-60">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 items-stretch">
           {partners.map((partner) => (
             <div
               key={partner.id}
-              className="bg-slate-50 px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-slate-100 group flex items-center justify-center hover:bg-white hover:border-foni-navy hover:shadow-md transition-all duration-300 cursor-default"
+              className="bg-white rounded-4xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 flex flex-col items-center justify-center gap-3 group hover:-translate-y-0.5"
             >
-              <span className="text-base sm:text-xl md:text-2xl font-bold text-slate-700 tracking-tight group-hover:text-foni-navy transition-colors">
+              <div className="w-full max-w-40 h-14 sm:h-16 flex items-center justify-center">
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={220}
+                  height={80}
+                  className="w-auto h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                  unoptimized
+                />
+              </div>
+              <span className="text-xs sm:text-sm font-bold text-slate-600 tracking-tight text-center group-hover:text-slate-900 transition-colors">
                 {partner.name}
               </span>
             </div>
@@ -380,7 +391,71 @@ export default async function Home() {
         )}
       </section>
 
-      {/* 6. SPORTident Tech (Bento Box Layout) */}
+      {/* 6. Achievement Showcase (FORNAS NTB) */}
+      <section className="py-16 sm:py-24 bg-slate-900 relative overflow-hidden">
+        {/* Decorative Background */}
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-foni-orange via-transparent to-transparent"></div>
+        <div className="absolute -left-40 top-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+            
+            {/* Left Content */}
+            <div className="flex-1 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-xs font-bold text-slate-300 uppercase tracking-widest mb-6">
+                <Medal className="w-4 h-4 text-amber-400" /> 
+                Highlight Prestasi Puncak
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
+                Dominasi <br className="hidden lg:block"/> di <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-200 to-amber-500">FORNAS NTB VIII 2025</span>
+              </h2>
+              <p className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+                Pada ajang terbaru di Nusa Tenggara Barat, FONI DKI Jakarta kembali mengukuhkan dominasinya sebagai barometer orienteering nasional dengan perolehan medali yang sangat solid.
+              </p>
+            </div>
+
+            {/* Right Content - Medals Display */}
+            <div className="w-full lg:w-1/2">
+              <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-4xl p-8 sm:p-10 shadow-2xl">
+                
+                {/* Total Medals */}
+                <div className="text-center mb-10 pb-10 border-b border-white/10">
+                  <div className="text-6xl md:text-7xl font-black text-white mb-2 tracking-tighter">18</div>
+                  <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Total Medali Keseluruhan</div>
+                </div>
+
+                {/* Medals Breakdown */}
+                <div className="grid grid-cols-3 gap-4 sm:gap-6 text-center">
+                  <div className="flex flex-col items-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-amber-400/20 border border-amber-400/30 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(251,191,36,0.15)]">
+                      <span className="text-3xl sm:text-4xl font-black text-amber-400">6</span>
+                    </div>
+                    <span className="text-sm font-bold text-white">Emas</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-slate-300/20 border border-slate-300/30 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(203,213,225,0.1)]">
+                      <span className="text-3xl sm:text-4xl font-black text-slate-300">6</span>
+                    </div>
+                    <span className="text-sm font-bold text-white">Perak</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-orange-700/30 border border-orange-700/40 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(194,65,12,0.2)]">
+                      <span className="text-3xl sm:text-4xl font-black text-orange-500">6</span>
+                    </div>
+                    <span className="text-sm font-bold text-white">Perunggu</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 7. SPORTident Tech (Bento Box Layout) */}
       <section className="py-16 sm:py-20 md:py-32 relative mt-12 sm:mt-16 md:mt-24">
         {/* Parallax Background */}
         <div 
