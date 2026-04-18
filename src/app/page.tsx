@@ -257,7 +257,7 @@ export default async function Home() {
                 href="/profil"
                 className="w-fit bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-foni-navy transition-all flex items-center gap-3 group shadow-lg hover:shadow-xl hover:-translate-y-1"
               >
-                Susunan Pengurus{" "}
+                Profil Organisasi{" "}
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -322,7 +322,7 @@ export default async function Home() {
             {upcomingEvents.map((evt) => (
               <div
                 key={evt.id}
-                className="min-w-[320px] md:min-w-95 w-[85vw] md:w-95 shrink-0 snap-start bg-white rounded-4xl border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
+                className="cursor-pointer min-w-[320px] md:min-w-95 w-[85vw] md:w-95 shrink-0 snap-start bg-white rounded-4xl border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
               >
                 <div className="relative h-56 bg-slate-100 overflow-hidden">
                   <Image

@@ -117,7 +117,7 @@ export default async function MapsPage() {
                 {groupedMaps[region].map((mapItem) => (
                   <div 
                     key={mapItem.id} 
-                    className="min-w-[320px] md:min-w-[400px] w-[85vw] md:w-[400px] shrink-0 snap-start bg-white rounded-2xl border border-slate-200 flex flex-col hover:border-foni-navy transition-colors duration-300 group"
+                    className="cursor-pointer min-w-[320px] md:min-w-[400px] w-[85vw] md:w-[400px] shrink-0 snap-start bg-white rounded-2xl border border-slate-200 flex flex-col hover:border-foni-navy transition-colors duration-300 group"
                   >
                     {/* Image Thumbnail */}
                     <div className="relative h-48 bg-slate-100 overflow-hidden rounded-t-2xl">

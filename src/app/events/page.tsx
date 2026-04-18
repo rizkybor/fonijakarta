@@ -126,7 +126,7 @@ export default async function EventsPage() {
                     </div>
                   </div>
                   
-                  <button className={`w-full py-4 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2 ${
+                  <button className={`cursor-pointer w-full py-4 rounded-xl font-bold text-sm transition-colors flex items-center justify-center gap-2 ${
                     evt.status === 'registration_open' 
                       ? 'bg-foni-navy text-white hover:bg-slate-800' 
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -152,7 +152,7 @@ export default async function EventsPage() {
               {pastEvents.map((evt) => (
                 <div 
                   key={evt.id}
-                  className="group flex flex-col sm:flex-row sm:items-center justify-between gap-6 p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-foni-navy hover:shadow-md transition-all duration-300"
+                  className="cursor-pointer group flex flex-col sm:flex-row sm:items-center justify-between gap-6 p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-foni-navy hover:shadow-md transition-all duration-300"
                 >
                   <div>
                     <div className="flex items-center gap-3 mb-2 text-xs font-bold uppercase tracking-widest">
