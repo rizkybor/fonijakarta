@@ -226,7 +226,7 @@ export default async function Home() {
                 Federasi Orienteering Nasional Indonesia (FONI) Pengurus
                 Provinsi DKI Jakarta adalah induk organisasi olahraga
                 orienteering di tingkat ibu kota yang bernaung di bawah KORMI
-                Nasional.
+                DKI Jakarta.
               </p>
 
               <p className="text-lg text-slate-500 leading-relaxed mb-8 font-light">
