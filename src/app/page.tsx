@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   Timer,
   Medal,
+  User2Icon,
 } from "lucide-react";
 import { partners } from "@/lib/dummyData";
 import { supabase } from "@/lib/supabase";
@@ -133,7 +134,7 @@ export default async function Home() {
               Klub Klub Terdaftar
             </div>
             <p className="mt-2 md:mt-3 text-[10px] md:text-xs text-slate-500 leading-relaxed hidden sm:block">
-              Klub orientering terdaftar di DKI yang tersebar di 5 wilayah kota
+              Klub orientering terdaftar di DKI yang tersebar di 6 wilayah kota
               administrasi.
             </p>
           </div>
@@ -268,7 +269,7 @@ export default async function Home() {
       {/* 4. Supported Logos */}
       <section className="py-12 sm:py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6">
         <p className="text-center text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8 sm:mb-10">
-          Didukung & Terafiliasi Dengan
+          Dinaungi oleh
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 items-stretch">
           {partners.map((partner) => (
@@ -362,6 +363,12 @@ export default async function Home() {
                         <Flag className="w-4 h-4 text-slate-400" />
                       </div>
                       <span className="font-medium">{evt.type}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-slate-600 text-sm">
+                      <div className="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0">
+                        <User2Icon className="w-4 h-4 text-slate-400" />
+                      </div>
+                      <span className="font-medium">-</span>
                     </div>
                   </div>
                 </div>

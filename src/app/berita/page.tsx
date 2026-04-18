@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Calendar, ChevronRight, ArrowUpRight, TrendingUp, Sparkles, Tag } from "lucide-react";
+import {
+  Calendar,
+  ChevronRight,
+  ArrowUpRight,
+  TrendingUp,
+  Sparkles,
+  Tag,
+} from "lucide-react";
 import { sponsors } from "@/lib/dummyData";
 import { supabase } from "@/lib/supabase";
 
@@ -23,9 +30,9 @@ export const revalidate = 60; // Revalidate every 60 seconds
 export default async function BeritaPage() {
   // Fetch news from Supabase
   const { data: newsArticles, error } = await supabase
-    .from('berita')
-    .select('*')
-    .order('published_at', { ascending: false });
+    .from("berita")
+    .select("*")
+    .order("published_at", { ascending: false });
 
   if (error) {
     console.error("Failed to fetch news:", error);
@@ -33,15 +40,15 @@ export default async function BeritaPage() {
   }
 
   const articles = (newsArticles || []) as Berita[];
-  const featuredNews = articles.filter(news => news.featured);
-  const regularNews = articles.filter(news => !news.featured);
+  const featuredNews = articles.filter((news) => news.featured);
+  const regularNews = articles.filter((news) => !news.featured);
 
   // Format date helper
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('id-ID', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric'
+    return new Date(dateString).toLocaleDateString("id-ID", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
     });
   };
 
@@ -54,10 +61,14 @@ export default async function BeritaPage() {
           Kabar Terbaru
         </div>
         <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter mb-6">
-          Pusat <span className="text-transparent bg-clip-text bg-linear-to-r from-foni-navy to-blue-600">Berita</span>
+          Pusat{" "}
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-foni-navy to-blue-600">
+            Berita
+          </span>
         </h1>
-        <p className="text-lg text-slate-500 max-w-2xl mx-auto font-medium">
-          Informasi terkini seputar kegiatan, prestasi, dan perkembangan olahraga orienteering di DKI Jakarta.
+        <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed">
+          Informasi terkini seputar kegiatan, prestasi, dan perkembangan
+          olahraga orienteering di DKI Jakarta.
         </p>
       </section>
 
@@ -65,21 +76,23 @@ export default async function BeritaPage() {
       <section className="max-w-7xl mx-auto px-6 mb-16">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-8 h-0.5 bg-foni-orange"></div>
-          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Sorotan Utama</span>
+          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+            Sorotan Utama
+          </span>
         </div>
-        
+
         <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {featuredNews.map((news) => (
-            <Link 
-              href={`/berita/${news.slug}`} 
+            <Link
+              href={`/berita/${news.slug}`}
               key={news.id}
               className="min-w-[85vw] md:min-w-150 lg:min-w-200 bg-white rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row group snap-center"
             >
               <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto h-64 md:h-100 overflow-hidden bg-slate-100">
-                <Image 
-                  src={news.image} 
-                  alt={news.title} 
-                  fill 
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold text-foni-navy shadow-sm">
@@ -98,7 +111,8 @@ export default async function BeritaPage() {
                   {news.excerpt}
                 </p>
                 <div className="mt-auto flex items-center gap-2 text-foni-navy font-bold text-sm">
-                  Baca Selengkapnya <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  Baca Selengkapnya{" "}
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </div>
               </div>
             </Link>
@@ -109,28 +123,29 @@ export default async function BeritaPage() {
       {/* 3. Main Content & Sidebar Grid */}
       <section className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
           {/* Left Column: News List */}
           <div className="lg:col-span-8">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-0.5 bg-blue-600"></div>
-                <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Berita Lainnya</span>
+                <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+                  Berita Lainnya
+                </span>
               </div>
             </div>
 
             <div className="flex flex-col gap-6">
               {regularNews.map((news) => (
-                <Link 
-                  href={`/berita/${news.slug}`} 
+                <Link
+                  href={`/berita/${news.slug}`}
                   key={news.id}
                   className="bg-white rounded-4xl border border-slate-200 p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col sm:flex-row gap-6 group items-center"
                 >
                   <div className="relative w-full sm:w-48 aspect-video rounded-2xl overflow-hidden bg-slate-100 shrink-0">
-                    <Image 
-                      src={news.image} 
-                      alt={news.title} 
-                      fill 
+                    <Image
+                      src={news.image}
+                      alt={news.title}
+                      fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
@@ -140,7 +155,8 @@ export default async function BeritaPage() {
                         {news.category}
                       </span>
                       <span className="text-xs font-bold text-slate-400 flex items-center gap-1.5">
-                        <Calendar className="w-3 h-3" /> {formatDate(news.published_at)}
+                        <Calendar className="w-3 h-3" />{" "}
+                        {formatDate(news.published_at)}
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
@@ -156,7 +172,7 @@ export default async function BeritaPage() {
 
             {/* Pagination / Load More */}
             <div className="mt-10 text-center">
-              <button className="bg-white border border-slate-200 text-slate-600 px-8 py-4 rounded-full font-bold text-sm hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
+              <button className="cursor-pointer bg-white border border-slate-200 text-slate-600 px-8 py-4 rounded-full font-bold text-sm hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
                 Muat Lebih Banyak
               </button>
             </div>
@@ -164,21 +180,28 @@ export default async function BeritaPage() {
 
           {/* Right Column: Sidebar / Sponsorship Space */}
           <div className="lg:col-span-4 space-y-8">
-            
             {/* Sponsor Banner Box */}
             <div className="bg-white rounded-4xl border border-slate-200 p-8 shadow-sm text-center relative overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow">
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              
+
               <div className="w-16 h-16 mx-auto bg-foni-orange/10 rounded-2xl flex items-center justify-center mb-6 text-foni-orange">
                 <TrendingUp className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-black text-slate-900 mb-2">Space Promosi</h3>
+              <h3 className="text-xl font-black text-slate-900 mb-2">
+                Space Promosi
+              </h3>
               <p className="text-sm text-slate-500 mb-6">
-                Jangkau ribuan audiens aktif dan dukung perkembangan olahraga orienteering di DKI Jakarta.
+                Jangkau ribuan audiens aktif dan dukung perkembangan olahraga
+                orienteering di DKI Jakarta.
               </p>
-              <div className="inline-flex items-center gap-2 text-sm font-bold text-white bg-foni-navy px-6 py-3 rounded-full hover:bg-slate-800 transition-colors">
-                Hubungi Kami <ChevronRight className="w-4 h-4" />
-              </div>
+              <a
+                href="https://wa.me/6285692660605"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer inline-flex items-center gap-2 text-sm font-bold text-white bg-foni-navy px-6 py-3 rounded-full hover:bg-slate-800 transition-colors"
+              >
+                Hubungi Bidang Kemitraan Kami <ChevronRight className="w-4 h-4" />
+              </a>
             </div>
 
             {/* Categories / Tags Widget */}
@@ -188,9 +211,15 @@ export default async function BeritaPage() {
                 <h3 className="text-lg font-bold text-slate-900">Kategori</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                {["Event", "Prestasi", "Pelatihan", "Sosialisasi", "Pemetaan"].map((cat) => (
-                  <Link 
-                    key={cat} 
+                {[
+                  "Event",
+                  "Prestasi",
+                  "Pelatihan",
+                  "Sosialisasi",
+                  "Pemetaan",
+                ].map((cat) => (
+                  <Link
+                    key={cat}
                     href="#"
                     className="px-4 py-2 rounded-xl bg-slate-50 border border-slate-100 text-sm font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-100 transition-colors"
                   >
@@ -202,11 +231,13 @@ export default async function BeritaPage() {
 
             {/* Official Sponsor Grid */}
             <div className="bg-white rounded-4xl border border-slate-200 p-8 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 mb-6 text-center">Mitra & Sponsor</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-6 text-center">
+                Mitra & Sponsor
+              </h3>
               <div className="grid grid-cols-2 gap-4">
                 {sponsors.map((sp) => (
-                  <Link 
-                    key={sp.id} 
+                  <Link
+                    key={sp.id}
                     href={sp.link}
                     className="aspect-square bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-center p-4 hover:border-slate-300 hover:bg-white hover:shadow-sm transition-all grayscale hover:grayscale-0"
                     title={sp.name}
@@ -218,9 +249,7 @@ export default async function BeritaPage() {
                 ))}
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
     </div>

@@ -81,17 +81,17 @@ export default async function KeanggotaanPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center justify-center gap-4 mb-6">
             <div className="w-8 h-0.5 bg-foni-navy"></div>
-            <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Database Organisasi</span>
+            <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Keanggotaan Resmi</span>
             <div className="w-8 h-0.5 bg-foni-navy"></div>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1] max-w-4xl mx-auto">
-            Jaringan <br />
-            <span className="text-foni-navy">Keanggotaan FONI</span>
+            Keanggotaan Klub <br />
+            <span className="text-foni-navy">FONI DKI Jakarta</span>
           </h1>
           
           <p className="text-xl text-slate-500 font-light max-w-2xl mx-auto leading-relaxed">
-            Persebaran klub orienteering terdaftar dan Sumber Daya Manusia (SDM) tersertifikasi di 6 wilayah Provinsi DKI Jakarta.
+            Persebaran klub klub orienteering terdaftar dan Tenaga Ahli di 6 wilayah Provinsi DKI Jakarta.
           </p>
         </div>
       </section>
@@ -148,7 +148,7 @@ export default async function KeanggotaanPage() {
                       <div className="bg-slate-50/80 rounded-xl p-4 border border-slate-100/50">
                         <div className="flex items-center gap-2 mb-4">
                           <Navigation className="w-3.5 h-3.5 text-slate-700" />
-                          <span className="font-bold text-slate-800 text-xs flex-1">Planner</span>
+                          <span className="font-bold text-slate-800 text-xs flex-1">Course Planner</span>
                           <span className="bg-foni-navy text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.planner.length}</span>
                         </div>
                         <div className="space-y-4">
@@ -166,7 +166,7 @@ export default async function KeanggotaanPage() {
                       <div className="bg-slate-50/80 rounded-xl p-4 border border-slate-100/50">
                         <div className="flex items-center gap-2 mb-4">
                           <CheckCircle2 className="w-3.5 h-3.5 text-slate-700" />
-                          <span className="font-bold text-slate-800 text-xs flex-1">Adviser</span>
+                          <span className="font-bold text-slate-800 text-xs flex-1">Event Adviser</span>
                           <span className="bg-foni-navy text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">{sdm.adviser.length}</span>
                         </div>
                         <div className="space-y-4">

@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { Calendar, MapPin, ArrowRight, CheckCircle2, Flag, Navigation, BookOpen } from "lucide-react";
+import { Calendar, MapPin, ArrowRight, CheckCircle2, Flag, Navigation, BookOpen, User2Icon } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "Jadwal Event & Kompetisi",
-  description: "Kalender kegiatan resmi, latihan bersama, dan kejuaraan orienteering yang diselenggarakan di Provinsi DKI Jakarta.",
+  description: "Kalender kegiatan resmi, latihan bersama, dan kejuaraan orienteering yang diselenggarakan di wilayah Provinsi DKI Jakarta.",
 };
 
 // Define Event Type
@@ -123,6 +123,12 @@ export default async function EventsPage() {
                         <Flag className="w-4 h-4 text-slate-400" />
                       </div>
                       <span className="font-medium">{evt.type}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-slate-600 text-sm">
+                      <div className="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0">
+                        <User2Icon className="w-4 h-4 text-slate-400" />
+                      </div>
+                      <span className="font-medium">-</span>
                     </div>
                   </div>
                   
