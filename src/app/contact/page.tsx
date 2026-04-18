@@ -57,7 +57,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-800 mb-2 text-sm uppercase tracking-widest">Telepon / WA</h3>
-                    <p className="text-slate-500 text-sm font-mono">+62 812-3456-7890</p>
+                    <p className="text-slate-500 text-sm font-mono">+62 812-3456-7890 / +62 896-0292-1403</p>
                   </div>
                 </div>
 
