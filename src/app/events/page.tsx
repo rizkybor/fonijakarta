@@ -48,7 +48,7 @@ export default async function EventsPage() {
         <section className="mb-20 text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center justify-center gap-4 mb-6">
             <div className="w-8 h-0.5 bg-foni-navy"></div>
-            <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Jadwal & Agenda</span>
+            <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">Jadwal & Agenda Resmi</span>
             <div className="w-8 h-0.5 bg-foni-navy"></div>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tighter leading-[1.1]">

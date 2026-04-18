@@ -7,9 +7,9 @@ export const siteStats = {
 
 export const partners = [
   { id: 1, name: "Federasi Orienteering Nasional Indonesia", logo: "/logo/supported-logo-foninasional.svg" },
-  { id: 2, name: "Jakarta Jaya Raya", logo: "/logo/supported-logo-dki.svg" },
-  { id: 3, name: "DISPORA DKI Jakarta", logo: "/logo/supported-logo-dispora.svg" },
-  { id: 4, name: "KORMI DKI Jakarta", logo: "/logo/supported-logo-kormi.svg" },
+  // { id: 2, name: "Jakarta Jaya Raya", logo: "/logo/supported-logo-dki.svg" },
+  { id: 2, name: "DISPORA DKI Jakarta", logo: "/logo/supported-logo-dispora.svg" },
+  { id: 3, name: "KORMI DKI Jakarta", logo: "/logo/supported-logo-kormi.svg" },
 ];
 
 export const upcomingEvents = [

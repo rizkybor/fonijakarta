@@ -122,7 +122,7 @@ export default async function KeanggotaanPage() {
                   <div className="mb-8">
                     <div className="flex items-center gap-2 mb-4">
                       <ShieldCheck className="w-3.5 h-3.5 text-slate-400" />
-                      <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Ketersediaan SDM Tersertifikasi</h3>
+                      <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tenaga Ahli</h3>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">

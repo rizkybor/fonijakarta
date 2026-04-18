@@ -271,11 +271,11 @@ export default async function Home() {
         <p className="text-center text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8 sm:mb-10">
           Dinaungi oleh
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 items-stretch">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           {partners.map((partner) => (
             <div
               key={partner.id}
-              className="bg-white rounded-4xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 flex flex-col items-center justify-center gap-3 group hover:-translate-y-0.5"
+              className="basis-[calc(50%-0.5rem)] sm:basis-[calc(25%-1.125rem)] bg-white rounded-4xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 flex flex-col items-center justify-center gap-3 group hover:-translate-y-0.5"
             >
               <div className="w-full max-w-40 h-14 sm:h-16 flex items-center justify-center">
                 <Image
@@ -302,7 +302,7 @@ export default async function Home() {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-0.5 bg-foni-orange"></div>
               <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">
-                Agenda
+                Agenda Resmi
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
@@ -397,13 +397,13 @@ export default async function Home() {
             <div className="flex-1 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-xs font-bold text-slate-300 uppercase tracking-widest mb-6">
                 <Medal className="w-4 h-4 text-amber-400" /> 
-                Highlight Prestasi Puncak
+                Highlight Prestasi
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
                 Dominasi <br className="hidden lg:block"/> di <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-200 to-amber-500">FORNAS NTB VIII 2025</span>
               </h2>
               <p className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
-                Pada ajang terbaru di Nusa Tenggara Barat, FONI Pengprov DKI Jakarta kembali mengukuhkan dominasinya sebagai barometer orienteering nasional dengan perolehan medali yang sangat solid.
+                Pada ajang terbaru di Nusa Tenggara Barat, FONI Pengprov DKI Jakarta kembali mengukuhkan dominasinya sekaligus mencetak sejarah emas dengan mempertahankan gelar Juara Umum tiga kali berturut-turut di ajang FORNAS (Sumsel 2021, Jabar 2023, NTB 2025).
               </p>
             </div>
 
@@ -414,30 +414,39 @@ export default async function Home() {
                 {/* Total Medals */}
                 <div className="text-center mb-10 pb-10 border-b border-white/10">
                   <div className="text-6xl md:text-7xl font-black text-white mb-2 tracking-tighter">18</div>
-                  <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Total Medali Keseluruhan</div>
+                  <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Total Medali Keseluruhan di FORNAS VIII NTB 2025</div>
                 </div>
 
                 {/* Medals Breakdown */}
                 <div className="grid grid-cols-3 gap-4 sm:gap-6 text-center">
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-amber-400/20 border border-amber-400/30 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(251,191,36,0.15)]">
-                      <span className="text-3xl sm:text-4xl font-black text-amber-400">6</span>
+                  <div className="flex flex-col items-center rounded-4xl bg-white/5 border border-white/10 p-5 sm:p-6 shadow-[0_0_30px_rgba(251,191,36,0.08)]">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-3xl bg-amber-400/15 border border-amber-400/25 flex items-center justify-center mb-4">
+                      <Medal className="w-7 h-7 sm:w-8 sm:h-8 text-amber-300" />
                     </div>
-                    <span className="text-sm font-bold text-white">Emas</span>
+                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tighter">6</div>
+                    <div className="mt-1 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-300">
+                      Emas
+                    </div>
                   </div>
                   
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-slate-300/20 border border-slate-300/30 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(203,213,225,0.1)]">
-                      <span className="text-3xl sm:text-4xl font-black text-slate-300">6</span>
+                  <div className="flex flex-col items-center rounded-4xl bg-white/5 border border-white/10 p-5 sm:p-6 shadow-[0_0_30px_rgba(203,213,225,0.06)]">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-3xl bg-slate-200/10 border border-slate-200/20 flex items-center justify-center mb-4">
+                      <Medal className="w-7 h-7 sm:w-8 sm:h-8 text-slate-200" />
                     </div>
-                    <span className="text-sm font-bold text-white">Perak</span>
+                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tighter">6</div>
+                    <div className="mt-1 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-300">
+                      Perak
+                    </div>
                   </div>
                   
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-orange-700/30 border border-orange-700/40 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(194,65,12,0.2)]">
-                      <span className="text-3xl sm:text-4xl font-black text-orange-500">6</span>
+                  <div className="flex flex-col items-center rounded-4xl bg-white/5 border border-white/10 p-5 sm:p-6 shadow-[0_0_30px_rgba(249,115,22,0.08)]">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-3xl bg-orange-500/15 border border-orange-500/20 flex items-center justify-center mb-4">
+                      <Medal className="w-7 h-7 sm:w-8 sm:h-8 text-orange-300" />
                     </div>
-                    <span className="text-sm font-bold text-white">Perunggu</span>
+                    <div className="text-3xl sm:text-4xl font-black text-white tracking-tighter">6</div>
+                    <div className="mt-1 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-300">
+                      Perunggu
+                    </div>
                   </div>
                 </div>
 
