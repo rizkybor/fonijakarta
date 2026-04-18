@@ -102,7 +102,7 @@ export default async function Home() {
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium mb-8 sm:mb-10 px-2">
-         Menyediakan informasi seputar event & kompetisi bertaraf Daerah, Nasional serta Internasional, Klub klub terdaftar hingga berita berita perkembangan orienteering di DKI Jakarta maupun Nasional.
+         Menyediakan informasi seputar event, pelatihan hingga kompetisi bertaraf Daerah, Nasional serta Internasional, Klub klub terdaftar hingga berita berita perkembangan orienteering di DKI Jakarta maupun Nasional.
         </p>
        
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
