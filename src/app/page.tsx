@@ -171,7 +171,7 @@ export default async function Home() {
               {mapsCount ?? 0}
             </div>
             <div className="mt-2 text-[10px] md:text-xs font-bold text-slate-800 tracking-[0.05em] uppercase">
-              Peta Peta di Wilayah DKI
+              Peta di wilayah Jakarta
             </div>
             <p className="mt-2 md:mt-3 text-[10px] md:text-xs text-slate-500 leading-relaxed hidden sm:block">
               Wilayah yang sudah dipetakan untuk kompetisi dan latihan rutin.
