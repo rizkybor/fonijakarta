@@ -213,7 +213,7 @@ export default async function Home() {
 
               <div className="relative w-full aspect-4/5 md:aspect-square bg-slate-200 rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl">
                 <Image
-                  src="/logo/logo-foni.png"
+                  src="/logo/logofonidki.png"
                   alt="Tentang FONI DKI"
                   fill
                   className="object-contain p-6 sm:p-10 md:p-12"
