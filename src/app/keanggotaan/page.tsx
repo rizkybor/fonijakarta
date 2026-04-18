@@ -87,7 +87,7 @@ export default async function KeanggotaanPage() {
           
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1] max-w-4xl mx-auto">
             Keanggotaan Klub <br />
-            <span className="text-foni-navy">FONI DKI Jakarta</span>
+            <span className="text-foni-navy">FONI Pengprov DKI Jakarta</span>
           </h1>
           
           <p className="text-xl text-slate-500 font-light max-w-2xl mx-auto leading-relaxed">

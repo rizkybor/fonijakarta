@@ -73,7 +73,7 @@ export default function Navbar() {
             <div className="relative w-57 h-11 md:w-38 md:h-25 flex items-center transition-transform hover:scale-105 duration-300">
               <Image
                 src="/logo/logofonidki.png"
-                alt="FONI DKI Jakarta Logo"
+                alt="FONI Pengprov DKI Jakarta Logo"
                 width={520}
                 height={140}
                 priority

@@ -18,7 +18,7 @@ export default function ContactForm() {
     const subject = String(data.get("subject") || "").trim();
     const message = String(data.get("message") || "").trim();
 
-    const mailSubject = subject || "Pesan dari Website FONI DKI Jakarta";
+    const mailSubject = subject || "Pesan dari Website FONI Pengprov DKI Jakarta";
     const bodyLines = [message];
     const mailto = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(
       mailSubject,

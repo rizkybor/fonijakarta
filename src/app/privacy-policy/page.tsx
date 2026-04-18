@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Kebijakan privasi resmi situs FONI DKI Jakarta. Menjelaskan pengumpulan, penggunaan, dan perlindungan data.",
+    "Kebijakan privasi resmi situs FONI Pengprov DKI Jakarta. Menjelaskan pengumpulan, penggunaan, dan perlindungan data.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -35,7 +35,7 @@ export default function PrivacyPolicyPage() {
         <div className="bg-slate-900 rounded-4xl border border-slate-200 shadow-sm p-6 md:p-10">
           <div className="prose prose-slate max-w-none prose-headings:font-black prose-headings:tracking-tight prose-a:text-foni-navy prose-a:no-underline hover:prose-a:underline">
             <p>
-              Kebijakan privasi ini menjelaskan bagaimana FONI DKI Jakarta mengelola informasi ketika Anda menggunakan situs ini.
+              Kebijakan privasi ini menjelaskan bagaimana FONI Pengprov DKI Jakarta mengelola informasi ketika Anda menggunakan situs ini.
             </p>
 
             <h2>1. Data yang Kami Kumpulkan</h2>

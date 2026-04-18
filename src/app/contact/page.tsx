@@ -91,7 +91,7 @@ export default function ContactPage() {
                 allowFullScreen={false} 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Lokasi Sekretariat FONI DKI Jakarta"
+                title="Lokasi Sekretariat FONI Pengprov DKI Jakarta"
                 className="absolute inset-0 grayscale-[0.2]"
               ></iframe>
             </div>

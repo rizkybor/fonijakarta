@@ -403,7 +403,7 @@ export default async function Home() {
                 Dominasi <br className="hidden lg:block"/> di <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-200 to-amber-500">FORNAS NTB VIII 2025</span>
               </h2>
               <p className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
-                Pada ajang terbaru di Nusa Tenggara Barat, FONI DKI Jakarta kembali mengukuhkan dominasinya sebagai barometer orienteering nasional dengan perolehan medali yang sangat solid.
+                Pada ajang terbaru di Nusa Tenggara Barat, FONI Pengprov DKI Jakarta kembali mengukuhkan dominasinya sebagai barometer orienteering nasional dengan perolehan medali yang sangat solid.
               </p>
             </div>
 

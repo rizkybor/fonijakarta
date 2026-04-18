@@ -13,7 +13,7 @@ export default function Footer() {
               <div className="relative h-28 sm:h-32 md:h-36 w-full max-w-[520px]">
                 <Image
                   src="/logo/logofonidkiwhite.png"
-                  alt="FONI DKI Jakarta Logo"
+                  alt="FONI Pengprov DKI Jakarta Logo"
                   fill
                   sizes="(min-width: 768px) 520px, 360px"
                   className="object-contain object-left"
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} FONI DKI Jakarta. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} FONI Pengprov DKI Jakarta. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>

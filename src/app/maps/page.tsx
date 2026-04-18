@@ -17,7 +17,7 @@ import { supabase } from "@/lib/supabase";
 export const metadata: Metadata = {
   title: "Galeri Peta IOF",
   description:
-    "Koleksi peta teknikal berstandar IOF (International Orienteering Federation) yang dikelola resmi oleh FONI DKI Jakarta.",
+    "Koleksi peta teknikal berstandar IOF (International Orienteering Federation) yang dikelola resmi oleh FONI Pengprov DKI Jakarta.",
 };
 
 // Define Map Type
@@ -240,7 +240,7 @@ export default async function MapsPage() {
                 Hubungi Bidang Pemetaan
               </h2>
               <p className="text-lg text-slate-300 font-light leading-relaxed">
-                Tim Mapper dari FONI DKI Jakarta siap membantu ataupun
+                Tim Mapper dari FONI Pengprov DKI Jakarta siap membantu ataupun
                 merekomendasikan instansi atau sekolah Anda menyediakan peta
                 orienteering dengan menggunakan standar ISSPROM atau ISOM
                 terupdate sebagai acuan penggunaan simbol simbol didalam peta.

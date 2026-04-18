@@ -29,14 +29,14 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: "FONI DKI Jakarta - Satu Peta Seribu Sinergi",
-    template: "%s | FONI DKI Jakarta",
+    default: "FONI Pengprov DKI Jakarta - Satu Peta Seribu Sinergi",
+    template: "%s | FONI Pengprov DKI Jakarta",
   },
   description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengprov DKI Jakarta. Informasi event & kompetisi, klub klub terdaftar dan berita.",
   keywords: ["Orienteering Jakarta", "FONI", "FONI DKI", "FONI pengprov DKI", "KORMI DKI", "Navigasi Darat", "Event Orienteering", "Orienteering Indonesia", "Orienteering"],
-  authors: [{ name: "FONI DKI Jakarta" }],
-  creator: "FONI DKI Jakarta",
-  publisher: "FONI DKI Jakarta",
+  authors: [{ name: "FONI Pengprov DKI Jakarta" }],
+  creator: "FONI Pengprov DKI Jakarta",
+  publisher: "FONI Pengprov DKI Jakarta",
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" }
@@ -52,21 +52,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://fonijakarta.web.id",
-    title: "FONI DKI Jakarta - Satu Peta Seribu Sinergi",
+    title: "FONI Pengprov DKI Jakarta - Satu Peta Seribu Sinergi",
     description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengprov DKI Jakarta. Informasi event & kompetisi, klub klub terdaftar dan berita.",
-    siteName: "FONI DKI Jakarta",
+    siteName: "FONI Pengprov DKI Jakarta",
     images: [
       {
         url: "https://fonijakarta.web.id/logo/LOGO_FONI_DKI.jpg",
         width: 1200,
         height: 630,
-        alt: "FONI DKI Jakarta - Orienteering Indonesia",
+        alt: "FONI Pengprov DKI Jakarta - Orienteering Indonesia",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FONI DKI Jakarta - Satu Peta Seribu Sinergi",
+    title: "FONI Pengprov DKI Jakarta - Satu Peta Seribu Sinergi",
     description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengprov DKI Jakarta. Informasi event & kompetisi, klub klub terdaftar dan berita.",
     images: ["https://fonijakarta.web.id/logo/LOGO_FONI_DKI.jpg"],
   },

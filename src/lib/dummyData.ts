@@ -432,7 +432,7 @@ export const clubsData = {
 export const newsArticles = [
   {
     id: "news-1",
-    title: "Tim FONI DKI Jakarta Optimis Raih Emas di FORNAS VII",
+    title: "Tim FONI Pengprov DKI Jakarta Optimis Raih Emas di FORNAS VII",
     excerpt: "Persiapan intensif terus dilakukan oleh tim pelatda DKI Jakarta menjelang perhelatan Festival Olahraga Rekreasi Nasional (FORNAS) VII di Jawa Barat.",
     date: "12 Okt 2025",
     category: "Prestasi",
@@ -460,7 +460,7 @@ export const newsArticles = [
   {
     id: "news-4",
     title: "Sosialisasi Orienteering di Sekolah Menengah Atas DKI Jakarta",
-    excerpt: "FONI DKI Jakarta memulai program 'Orienteering Goes to School' untuk mengenalkan olahraga cerdas ini ke kalangan pelajar menengah atas.",
+    excerpt: "FONI Pengprov DKI Jakarta memulai program 'Orienteering Goes to School' untuk mengenalkan olahraga cerdas ini ke kalangan pelajar menengah atas.",
     date: "15 Agu 2025",
     category: "Sosialisasi",
     image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop",

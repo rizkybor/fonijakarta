@@ -30,11 +30,10 @@ export default function ProfilPage() {
         <section className="mb-24">
           <div className="bg-slate-50 border border-slate-200 rounded-4xl p-6 md:p-10">
             <p className="text-slate-600 leading-relaxed mb-10 text-lg">
-              <strong className="text-slate-900">FONI DKI Jakarta</strong>{" "}
-              (Federasi Orienteering Nasional Indonesia Pengprov DKI Jakarta)
+              <strong className="text-slate-900">FONI PENGPROV DKI Jakarta</strong>{" "}
               memiliki sejarah yang cukup panjang dalam memajukan olahraga
               navigasi di ibu kota. Sebagai bagian dari induk organisasi
-              nasional, FONI DKI Jakarta berperan penting sebagai{" "}
+              nasional, FONI Pengprov DKI Jakarta berperan penting sebagai{" "}
               <em>"barometer"</em> perkembangan orienteering di Indonesia.
             </p>
 
@@ -69,7 +68,7 @@ export default function ProfilPage() {
                   </h3>
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Pada masa pandemi COVID-19 (2021), FONI DKI Jakarta menjadi
+                  Pada masa pandemi COVID-19 (2021), FONI Pengprov DKI Jakarta menjadi
                   pionir melalui pilot project{" "}
                   <strong>"The New of Orienteering"</strong>. Acara ini
                   menerapkan protokol kesehatan ketat dan menjadi percontohan

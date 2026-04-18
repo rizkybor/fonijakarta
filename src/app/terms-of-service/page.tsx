@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Ketentuan layanan resmi situs FONI DKI Jakarta. Membahas penggunaan situs, tanggung jawab, dan batasan layanan.",
+    "Ketentuan layanan resmi situs FONI Pengprov DKI Jakarta. Membahas penggunaan situs, tanggung jawab, dan batasan layanan.",
 };
 
 export default function TermsOfServicePage() {
@@ -30,7 +30,7 @@ export default function TermsOfServicePage() {
         <div className="bg-slate-900 rounded-4xl border border-slate-200 shadow-sm p-6 md:p-10">
           <div className="prose prose-slate max-w-none prose-headings:font-black prose-headings:tracking-tight prose-a:text-foni-navy prose-a:no-underline hover:prose-a:underline">
             <p>
-              Ketentuan ini mengatur penggunaan situs FONI DKI Jakarta. Dengan mengakses atau menggunakan situs ini, Anda dianggap memahami dan menyetujui ketentuan berikut.
+              Ketentuan ini mengatur penggunaan situs FONI Pengprov DKI Jakarta. Dengan mengakses atau menggunakan situs ini, Anda dianggap memahami dan menyetujui ketentuan berikut.
             </p>
 
             <h2>1. Ruang Lingkup Layanan</h2>
@@ -45,7 +45,7 @@ export default function TermsOfServicePage() {
 
             <h2>3. Hak Kekayaan Intelektual</h2>
             <p>
-              Konten situs (termasuk teks, desain, logo, dan materi visual) dilindungi oleh hak kekayaan intelektual milik FONI DKI Jakarta atau pihak terkait. Dilarang menggunakan, menyalin, atau mendistribusikan tanpa izin tertulis.
+              Konten situs (termasuk teks, desain, logo, dan materi visual) dilindungi oleh hak kekayaan intelektual milik FONI Pengprov DKI Jakarta atau pihak terkait. Dilarang menggunakan, menyalin, atau mendistribusikan tanpa izin tertulis.
             </p>
 
             <h2>4. Perilaku Pengguna</h2>
@@ -60,7 +60,7 @@ export default function TermsOfServicePage() {
 
             <h2>6. Batasan Tanggung Jawab</h2>
             <p>
-              Sejauh diizinkan oleh hukum yang berlaku, FONI DKI Jakarta tidak bertanggung jawab atas kerugian langsung maupun tidak langsung yang timbul dari penggunaan situs atau ketergantungan pada informasi di dalamnya.
+              Sejauh diizinkan oleh hukum yang berlaku, FONI Pengprov DKI Jakarta tidak bertanggung jawab atas kerugian langsung maupun tidak langsung yang timbul dari penggunaan situs atau ketergantungan pada informasi di dalamnya.
             </p>
 
             <h2>7. Perubahan Ketentuan</h2>

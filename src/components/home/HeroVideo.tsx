@@ -51,7 +51,7 @@ export default function HeroVideo() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-          title="Video profil FONI DKI Jakarta"
+          title="Video profil FONI Pengprov DKI Jakarta"
           onLoad={() => {
             if (!isPlaying) {
               sendYouTubeCommand("pauseVideo");
