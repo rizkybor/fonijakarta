@@ -131,12 +131,11 @@ export default function ProfilPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 tracking-tight">
             Susunan <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-foni-navy to-blue-600">
-              Pengurus Daerah
+              Pengurus
             </span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-light">
-            Mengenal lebih dekat sosok-sosok di balik pengembangan olahraga
-            orienteering di Provinsi DKI Jakarta untuk masa bakti 2026-2030.
+            Mengenal lebih dekat sosok-sosok di balik pengembangan olahraga orienteering di Provinsi DKI Jakarta. Berdasarkan Surat Keputusan (SK) Pengurus Pusat FONI (Federasi Orienteering Nasional Indonesia) dengan Nomor [Masukkan Nomor SK] Tahun 2026, untuk masa bakti 2026–2030.
           </p>
         </div>
 
