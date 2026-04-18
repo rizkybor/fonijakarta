@@ -38,7 +38,7 @@ export default async function BeritaDetailPage({
   });
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-28 pb-24">
+    <div className="min-h-screen bg-slate-50 pt-38 pb-24">
       {/* Breadcrumbs */}
       <div className="max-w-4xl mx-auto px-6 mb-8">
         <div className="flex items-center gap-2 text-sm font-medium text-slate-500">

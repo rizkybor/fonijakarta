@@ -55,9 +55,9 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
   return (
     <div className="min-h-screen bg-slate-50 pb-32">
       {/* 1. Minimalist Header */}
-      <section className="relative pt-32 pb-16 bg-white border-b border-slate-100">
+      <section className="relative pt-42 pb-16 bg-white border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 relative z-10">
-          <Link href="/keanggotaan" className="inline-flex items-center gap-2 text-slate-400 hover:text-foni-navy transition-colors mb-8 text-sm font-bold uppercase tracking-widest group">
+          <Link href="/keanggotaan" className="cursor-pointer inline-flex items-center gap-2 text-slate-400 hover:text-foni-navy transition-colors mb-8 text-sm font-bold uppercase tracking-widest group">
             <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" /> Kembali
           </Link>
           
@@ -108,8 +108,8 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
                     <th className="px-8 py-5 text-xs font-bold text-slate-400 uppercase tracking-widest">Nama Lengkap</th>
                     <th className="px-8 py-5 text-xs font-bold text-slate-400 uppercase tracking-widest">L/P</th>
                     <th className="px-8 py-5 text-xs font-bold text-slate-400 uppercase tracking-widest">Kategori</th>
-                    <th className="px-8 py-5 text-xs font-bold text-slate-400 uppercase tracking-widest text-right">NRE Score</th>
-                    <th className="px-8 py-5 text-xs font-bold text-slate-400 uppercase tracking-widest text-right">WRE Score</th>
+                    {/* <th className="px-8 py-5 text-xs font-bold text-slate-400 uppercase tracking-widest text-right">NRE Score</th> */}
+                    <th className="px-8 py-5 text-xs font-bold text-slate-400 uppercase tracking-widest text-right">WRE Ranking</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -130,12 +130,12 @@ export default async function ClubDetailPage({ params }: { params: Promise<{ clu
                           {athlete.class}
                         </span>
                       </td>
-                      <td className="px-8 py-5 text-right">
+                      {/* <td className="px-8 py-5 text-right">
                         <div className="inline-flex items-center gap-2">
                           <span className="font-mono font-bold text-slate-700 text-lg">{athlete.nre}</span>
                           <Medal className="w-4 h-4 text-amber-500" />
                         </div>
-                      </td>
+                      </td> */}
                       <td className="px-8 py-5 text-right">
                         <div className="inline-flex items-center gap-2">
                           <span className="font-mono font-bold text-slate-700 text-lg">{athlete.wre > 0 ? athlete.wre : '-'}</span>
