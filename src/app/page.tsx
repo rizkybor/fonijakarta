@@ -57,9 +57,33 @@ export default async function Home() {
   ]);
 
   const upcomingEvents = (upcomingEventsData || []) as UpcomingEvent[];
+  const siteUrl = "https://fonijakarta.web.id";
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "FONI Pengprov DKI Jakarta",
+    url: siteUrl,
+    logo: `${siteUrl}/logo/LOGO_FONI_DKI.jpg`,
+    sameAs: [],
+  };
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "FONI Pengprov DKI Jakarta",
+    url: siteUrl,
+    inLanguage: "id-ID",
+  };
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
       {/* 1. Hero Section - Centered Modern Floating */}
       <section className="pt-32 px-4 sm:px-6 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 mb-6 sm:mb-8 shadow-sm hover:shadow-md transition-shadow cursor-default">

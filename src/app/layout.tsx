@@ -28,6 +28,7 @@ const caveat = Caveat({
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fonijakarta.web.id"),
   title: {
     default: "FONI Pengprov DKI Jakarta - Satu Peta Seribu Sinergi",
     template: "%s | FONI Pengprov DKI Jakarta",

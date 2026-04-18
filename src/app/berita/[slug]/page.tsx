@@ -4,8 +4,71 @@ import { notFound } from "next/navigation";
 import { Calendar, ArrowLeft, Tag, ChevronRight, User } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import ShareMenu from "@/components/berita/ShareMenu";
+import type { Metadata } from "next";
+import { cache } from "react";
 
 export const revalidate = 60; // Revalidate every 60 seconds
+
+const SITE_URL = "https://fonijakarta.web.id";
+
+const getArticle = cache(async (slug: string) => {
+  const { data, error } = await supabase
+    .from("berita")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+
+  return { data, error };
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const { data: article } = await getArticle(slug);
+
+  if (!article) {
+    return {
+      title: "Berita Tidak Ditemukan",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const url = `${SITE_URL}/berita/${slug}`;
+  const title = article.title as string;
+  const description = (article.excerpt as string) || title;
+  const image = article.image as string;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      locale: "id_ID",
+      url,
+      title,
+      description,
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      publishedTime: article.published_at as string,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+  };
+}
 
 export default async function BeritaDetailPage({
   params,
@@ -13,14 +76,9 @@ export default async function BeritaDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const shareUrl = `https://fonijakarta.web.id/berita/${slug}`;
+  const shareUrl = `${SITE_URL}/berita/${slug}`;
 
-  // Fetch single news article from Supabase
-  const { data: article, error } = await supabase
-    .from('berita')
-    .select('*')
-    .eq('slug', slug)
-    .single();
+  const { data: article, error } = await getArticle(slug);
 
   if (error) {
     console.error("Failed to fetch article:", error);
@@ -39,8 +97,35 @@ export default async function BeritaDetailPage({
     year: 'numeric'
   });
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: article.title,
+    description: article.excerpt,
+    image: [article.image],
+    datePublished: article.published_at,
+    dateModified: article.created_at,
+    author: { "@type": "Organization", name: "Redaksi FONI DKI" },
+    publisher: {
+      "@type": "Organization",
+      name: "FONI Pengprov DKI Jakarta",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo/LOGO_FONI_DKI.jpg`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": shareUrl,
+    },
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 pt-38 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Breadcrumbs */}
       <div className="max-w-4xl mx-auto px-6 mb-8">
         <div className="flex items-center gap-2 text-sm font-medium text-slate-500">
