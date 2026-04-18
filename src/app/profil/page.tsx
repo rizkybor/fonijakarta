@@ -120,6 +120,91 @@ export default function ProfilPage() {
           </div>
         </section>
 
+        {/* Header Minimalis Visi Misi */}
+        <div className="mb-15 max-w-3xl">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-0.5 bg-foni-orange"></div>
+            <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+              Periode 2026-2030
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 tracking-tight">
+            Visi <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-800 to-orange-400">
+              Misi
+            </span>
+          </h1>
+        </div>
+        {/* VISI MISI */}
+        <section className="mb-24">
+          <div className="bg-slate-50 border border-slate-200 rounded-4xl p-6 md:p-10">
+            <div className="rounded-4xl bg-white border border-slate-200 p-6 md:p-8 mb-8 shadow-sm">
+              <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400 mb-3">
+                Visi FONI Pengprov DKI Jakarta
+              </div>
+              <p className="text-base md:text-xl font-semibold text-slate-800 leading-relaxed md:leading-relaxed">
+                MENJADIKAN FONI PENGPROV DKI JAKARTA SEBAGAI BAROMETER ORIENTEERING NASIONAL
+                YANG INKLUSIF, MANDIRI, DAN BERDAYA SAING MELALUI KOLABORASI LINTAS
+                KOMUNITAS.
+              </p>
+            </div>
+
+            <div className="mb-5 flex items-center gap-3">
+              <div className="w-8 h-0.5 bg-foni-navy"></div>
+              <h3 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
+                Misi
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-sm font-black text-foni-navy mb-3">
+                  1. Sinergi Tanpa Sekat
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Membuka ruang kolaborasi seluas-luasnya bagi seluruh klub,
+                  komunitas, dan organisasi pecinta alam di Jakarta untuk bergerak
+                  bersama tanpa memandang latar belakang.
+                </p>
+              </div>
+
+              <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-sm font-black text-foni-navy mb-3">
+                  2. Standarisasi & Kualitas Teknis
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Meningkatkan kapasitas sumber daya manusia (atlet, course setter,
+                  dan mapper) melalui pelatihan yang terukur agar kompetisi di Jakarta
+                  memiliki standar teknis yang diakui secara nasional maupun
+                  internasional.
+                </p>
+              </div>
+
+              <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-sm font-black text-foni-navy mb-3">
+                  3. Digitalisasi & Inovasi Administrasi
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Modernisasi pendataan atlet dan klub serta pemanfaatan teknologi
+                  mapping terbaru agar pengelolaan organisasi lebih transparan dan
+                  efisien.
+                </p>
+              </div>
+
+              <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-sm font-black text-foni-navy mb-3">
+                  4. Kemandirian Ekonomi Organisasi
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Menjalin kemitraan strategis dengan sektor swasta (sponsorship) dan
+                  pemerintah daerah agar setiap agenda kegiatan memiliki dukungan
+                  finansial yang stabil.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Header Minimalis */}
         <div className="mb-24 max-w-3xl">
           <div className="flex items-center gap-4 mb-6">
