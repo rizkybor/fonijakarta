@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Calendar, ArrowLeft, Share2, Tag, ChevronRight, User } from "lucide-react";
+import { Calendar, ArrowLeft, Tag, ChevronRight, User } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import ShareMenu from "@/components/berita/ShareMenu";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -12,6 +13,7 @@ export default async function BeritaDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const shareUrl = `https://fonijakarta.web.id/berita/${slug}`;
 
   // Fetch single news article from Supabase
   const { data: article, error } = await supabase
@@ -77,10 +79,7 @@ export default async function BeritaDetailPage({
               </div>
             </div>
             
-            <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold transition-colors">
-              <Share2 className="w-4 h-4" />
-              <span className="hidden sm:inline">Bagikan</span>
-            </button>
+            <ShareMenu title={article.title} url={shareUrl} />
           </div>
         </header>
 
