@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Profil Pengurus",
   description:
-    "Susunan pengurus daerah Federasi Orienteering Nasional Indonesia (FONI) Provinsi DKI Jakarta masa bakti 2026-2030.",
+    "Susunan pengurus daerah Federasi Orienteering Nasional Indonesia (FONI) Provinsi DKI Jakarta masa bakti 2026-2031.",
 };
 
 export default function ProfilPage() {
@@ -125,7 +125,7 @@ export default function ProfilPage() {
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-0.5 bg-foni-orange"></div>
             <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">
-              Periode 2026-2030
+              Periode 2026-2031
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 tracking-tight">
