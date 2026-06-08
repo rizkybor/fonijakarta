@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-slate-400 mb-6 max-w-md leading-relaxed">
-              Federasi Orienteering Nasional Indonesia (FONI) Pengurus Provinsi DKI Jakarta. Wadah pembinaan, pengembangan, dan kompetisi olahraga orienteering di wilayah DKI Jakarta.
+              Pengurus Provinsi DKI Jakarta Federasi Orienteering Nasional Indonesia (FONI). Wadah pembinaan, pengembangan, dan kompetisi olahraga orienteering di wilayah DKI Jakarta.
             </p>
             <div className="flex items-center gap-4">
               <a href="https://www.instagram.com/foni_jakarta/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-foni-orange hover:text-white transition-colors">
@@ -77,7 +77,7 @@ Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta (11730)<
         </div>
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} Pengurus Provinsi FONI DKI Jakarta. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Pengurus Provinsi DKI Jakarta FONI. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>

@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   description: "Situs resmi Federasi Orienteering Nasional Indonesia (FONI) DKI Jakarta. Informasi event & kompetisi, klub klub terdaftar dan berita.",
   keywords: ["Orienteering Jakarta", "FONI", "FONI DKI", "FONI pengprov DKI", "KORMI DKI", "Navigasi Darat", "Event Orienteering", "Orienteering Indonesia", "Orienteering", "Foni Jakarta"],
-  authors: [{ name: "Pengurus Provinsi FONI DKI Jakarta" }],
-  creator: "Pengurus Provinsi FONI DKI Jakarta",
-  publisher: "Pengurus Provinsi FONI DKI Jakarta",
+  authors: [{ name: "Pengurus Provinsi DKI Jakarta" }],
+  creator: "Pengurus Provinsi DKI Jakarta",
+  publisher: "Pengurus Provinsi DKI Jakarta",
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" }
