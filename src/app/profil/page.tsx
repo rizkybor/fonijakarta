@@ -220,7 +220,7 @@ export default function ProfilPage() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-light">
-            Mengenal lebih dekat sosok-sosok di balik pengembangan olahraga orienteering di Provinsi DKI Jakarta. Berdasarkan Surat Keputusan (SK) Pengurus Pusat FONI (Federasi Orienteering Nasional Indonesia) dengan NOMOR 013/C/SK-PP/FONI/IV/2026, untuk masa bakti 2026–2031.
+            Mengenal lebih dekat sosok-sosok di balik pengembangan olahraga orienteering di Provinsi DKI Jakarta. Berdasarkan Surat Keputusan (SK) Pengurus Pusat FONI (Federasi Orienteering Nasional Indonesia) dengan NOMOR 013/C/SK-PP/FONI/IV/2026 TENTANG PENGUKUHAN KEPENGURUSAN PENGURUS PROVINSI FONI DKI JAKARTA PERIODE 2026 – 2031.
           </p>
         </div>
 
