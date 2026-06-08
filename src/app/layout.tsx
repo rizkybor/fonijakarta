@@ -30,14 +30,14 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://fonijakarta.web.id"),
   title: {
-    default: "FONI Pengprov DKI Jakarta - Satu Peta Seribu Sinergi",
+    default: "FONI DKI Jakarta - Satu Peta Seribu Sinergi",
     template: "%s | FONI Pengprov DKI Jakarta",
   },
-  description: "Situs resmi Federasi Orienteering Nasional Indonesia Pengprov DKI Jakarta. Informasi event & kompetisi, klub klub terdaftar dan berita.",
-  keywords: ["Orienteering Jakarta", "FONI", "FONI DKI", "FONI pengprov DKI", "KORMI DKI", "Navigasi Darat", "Event Orienteering", "Orienteering Indonesia", "Orienteering"],
-  authors: [{ name: "FONI Pengprov DKI Jakarta" }],
-  creator: "FONI Pengprov DKI Jakarta",
-  publisher: "FONI Pengprov DKI Jakarta",
+  description: "Situs resmi Federasi Orienteering Nasional Indonesia (FONI) DKI Jakarta. Informasi event & kompetisi, klub klub terdaftar dan berita.",
+  keywords: ["Orienteering Jakarta", "FONI", "FONI DKI", "FONI pengprov DKI", "KORMI DKI", "Navigasi Darat", "Event Orienteering", "Orienteering Indonesia", "Orienteering", "Foni Jakarta"],
+  authors: [{ name: "Pengurus Provinsi FONI DKI Jakarta" }],
+  creator: "Pengurus Provinsi FONI DKI Jakarta",
+  publisher: "Pengurus Provinsi FONI DKI Jakarta",
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" }

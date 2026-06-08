@@ -88,7 +88,7 @@ export default async function Home() {
       <section className="pt-32 px-4 sm:px-6 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 mb-6 sm:mb-8 shadow-sm hover:shadow-md transition-shadow cursor-default">
           <span className="w-2 h-2 rounded-full bg-foni-orange animate-pulse" />
-           Situs Resmi FONI Pengprov DKI Jakarta
+           Situs Resmi FONI DKI Jakarta
         </div>
 
         <h1 className="text-[3.5rem] leading-[0.9] sm:text-6xl md:text-7xl lg:text-[5rem] text-slate-900 tracking-tighter md:leading-[0.9] mb-6 px-2 uppercase transform -skew-x-6 drop-shadow-sm font-(family-name:--font-russo-one)">
