@@ -580,8 +580,8 @@ export const newsArticles = [
 ];
 
 export const sponsors = [
-  { id: "sp-1", name: "Bank DKI", logo: "/logos/bank-dki.svg", link: "#", tier: "platinum" },
-  { id: "sp-2", name: "Eiger Adventure", logo: "/logos/eiger.svg", link: "#", tier: "gold" },
-  { id: "sp-3", name: "Decathlon", logo: "/logos/decathlon.svg", link: "#", tier: "gold" },
-  { id: "sp-4", name: "Pocari Sweat", logo: "/logos/pocari.svg", link: "#", tier: "silver" },
+  { id: "sp-1", name: "Open Sponsor", logo: "/logos/bank-dki.svg", link: "#", tier: "platinum" },
+  { id: "sp-2", name: "Open Sponsor", logo: "/logos/eiger.svg", link: "#", tier: "gold" },
+  { id: "sp-3", name: "Open Sponsor", logo: "/logos/decathlon.svg", link: "#", tier: "gold" },
+  { id: "sp-4", name: "Open Sponsor", logo: "/logos/pocari.svg", link: "#", tier: "silver" },
 ];
