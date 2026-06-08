@@ -140,10 +140,10 @@ export default function ProfilPage() {
           <div className="bg-slate-50 border border-slate-200 rounded-4xl p-6 md:p-10">
             <div className="rounded-4xl bg-white border border-slate-200 p-6 md:p-8 mb-8 shadow-sm">
               <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400 mb-3">
-                Visi FONI Pengprov DKI Jakarta
+                Visi FONI Jakarta
               </div>
               <p className="text-base md:text-xl font-semibold text-slate-800 leading-relaxed md:leading-relaxed">
-                MENJADIKAN FONI PENGPROV DKI JAKARTA SEBAGAI BAROMETER ORIENTEERING NASIONAL
+                MENJADIKAN FONI JAKARTA SEBAGAI BAROMETER ORIENTEERING NASIONAL
                 YANG INKLUSIF, MANDIRI, DAN BERDAYA SAING MELALUI KOLABORASI LINTAS
                 KOMUNITAS.
               </p>
