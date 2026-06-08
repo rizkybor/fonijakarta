@@ -112,7 +112,7 @@ export const pengurusHierarchy = [
     level: "Sekretaris & Bendahara",
     members: [
       { name: "Rizky Ajie Kurniawan", position: "Sekretaris Umum" },
-      { name: "Nabila Rahayu", position: "Wakil Sekretaris Umum" },
+      { name: "Nabilah Rahayu", position: "Wakil Sekretaris Umum" },
       { name: "Tatu Inggit Setiawan", position: "Bendahara" },
       { name: "Ronaldo Muda", position: "Wakil Bendahara" }
     ]
@@ -186,7 +186,7 @@ export const pengurusHierarchy = [
     level: "Bidang Wisata & Petualangan",
     members: [
       { name: "Satrio Hutomo", position: "Kepala Bidang" },
-      { name: "M.Umar Maaruf", position: "Wakil Bidang" }
+      { name: "M. Umar Maaruf", position: "Wakil Bidang" }
     ]
   }
 ];
