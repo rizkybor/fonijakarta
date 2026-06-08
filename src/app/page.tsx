@@ -158,8 +158,7 @@ export default async function Home() {
               Klub Klub Terdaftar
             </div>
             <p className="mt-2 md:mt-3 text-[10px] md:text-xs text-slate-500 leading-relaxed hidden sm:block">
-              Klub orientering terdaftar di DKI yang tersebar di 6 wilayah kota
-              administrasi.
+              Klub orientering terdaftar di DKI yang tersebar di 4 wilayah kota administrasi.
             </p>
           </div>
 
