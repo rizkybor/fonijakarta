@@ -110,7 +110,7 @@ export default function ProfilPage() {
                 <p className="text-sm text-slate-600 leading-relaxed">
                   Membawa Jakarta ke kancah dunia melalui{" "}
                   <strong>
-                    JIOC (Jakarta International Orienteering Championship)
+                    JIOC (Jakarta International Orienteering Championship) Tahun 2025
                   </strong>
                   , sebuah <em>World Ranking Event</em> yang menarik atlet dari
                   Singapura, Hong Kong, Jepang, hingga Eropa.
