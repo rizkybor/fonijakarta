@@ -1,18 +1,9 @@
-import Image from "next/image";
+// src/app/maps/page.tsx
 import Link from "next/link";
 import { Metadata } from "next";
-import {
-  Search,
-  Map as MapIcon,
-  Maximize,
-  Clock,
-  FileText,
-  ArrowRight,
-  ChevronDown,
-  Lock,
-  User2Icon,
-} from "lucide-react";
+import { Search, ArrowRight, ChevronDown } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import MapCard from "@/components/maps/mapCard";
 
 export const metadata: Metadata = {
   title: "Galeri Peta IOF",
@@ -21,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 // Define Map Type
-type AppMap = {
+export type AppMap = {
   id: string;
   name: string;
   region: string;
@@ -32,12 +23,19 @@ type AppMap = {
   area_size: string;
   status: string;
   image: string;
+  software: string | null;
+  notes: string | null;
+  contact_name: string | null;
+  contact_phone: string | null;
+  contact_email: string | null;
+  contact_instagram: string | null;
+  contact_twitter: string | null;
+  contact_facebook: string | null;
 };
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const revalidate = 60;
 
 export default async function MapsPage() {
-  // Fetch maps from Supabase
   const { data: mapsData } = await supabase
     .from("galeripeta")
     .select("*")
@@ -45,7 +43,6 @@ export default async function MapsPage() {
 
   const allMaps = (mapsData || []) as AppMap[];
 
-  // Group maps by region
   const groupedMaps = allMaps.reduce(
     (acc, mapItem) => {
       const region = mapItem.region || "Lainnya";
@@ -60,7 +57,7 @@ export default async function MapsPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 pb-32">
-      {/* 1. Minimalist Hero Section */}
+      {/* 1. Hero Section */}
       <section className="relative pt-32 pb-24 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center justify-center gap-4 mb-6">
@@ -83,7 +80,7 @@ export default async function MapsPage() {
         </div>
       </section>
 
-      {/* 2. Clean Filter Bar */}
+      {/* 2. Filter Bar */}
       <section className="sticky top-[80px] lg:top-[96px] z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="relative w-full md:w-96 group">
@@ -121,12 +118,11 @@ export default async function MapsPage() {
         </div>
       </section>
 
-      {/* 3. Maps Grouped by Region (Horizontal Scroll Carousel) */}
+      {/* 3. Maps Grouped by Region */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
           {regions.map((region) => (
             <div key={region} className="mb-20 last:mb-0">
-              {/* Region Header */}
               <div className="flex items-center gap-4 mb-8">
                 <h2 className="text-3xl font-black text-slate-900 tracking-tight">
                   {region}
@@ -137,93 +133,9 @@ export default async function MapsPage() {
                 </span>
               </div>
 
-              {/* Horizontal Scroll Container */}
               <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
                 {groupedMaps[region].map((mapItem) => (
-                  <div
-                    key={mapItem.id}
-                    className="cursor-pointer min-w-[320px] md:min-w-[400px] w-[85vw] md:w-[400px] shrink-0 snap-start bg-white rounded-2xl border border-slate-200 flex flex-col hover:border-foni-navy transition-colors duration-300 group"
-                  >
-                    {/* Image Thumbnail */}
-                    <div className="relative h-48 bg-slate-100 overflow-hidden rounded-t-2xl">
-                      <Image
-                        src={mapItem.image}
-                        alt={mapItem.name}
-                        fill
-                        className="object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                      />
-
-                      <div className="absolute top-3 left-3">
-                        <div
-                          className={`px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-white rounded shadow-sm ${
-                            mapItem.status === "Active"
-                              ? "bg-foni-navy"
-                              : "bg-amber-500"
-                          }`}
-                        >
-                          {mapItem.status === "Active" ? "AKTIF" : "UPDATE"}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Content Body */}
-                    <div className="p-6 flex-1 flex flex-col">
-                      <div className="inline-block px-2 py-1 rounded bg-foni-orange/10 text-foni-orange font-bold text-[10px] uppercase tracking-widest mb-3 w-fit">
-                        {mapItem.norm}
-                      </div>
-
-                      <h3 className="text-xl font-bold text-slate-900 leading-tight mb-6 line-clamp-2">
-                        {mapItem.name}
-                      </h3>
-
-                      {/* Technical Specs - Clean List */}
-                      <div className="space-y-3 mb-8 mt-auto">
-                        <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                          <span className="text-slate-500 flex items-center gap-2">
-                            <MapIcon className="w-4 h-4" /> Skala
-                          </span>
-                          <span className="font-bold text-slate-900">
-                            {mapItem.scale}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                          <span className="text-slate-500 flex items-center gap-2">
-                            <FileText className="w-4 h-4" /> Interval Kontur
-                          </span>
-                          <span className="font-bold text-slate-900">
-                            {mapItem.contour_interval}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                          <span className="text-slate-500 flex items-center gap-2">
-                            <Maximize className="w-4 h-4" /> Area
-                          </span>
-                          <span className="font-bold text-slate-900">
-                            {mapItem.area_size}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm border-b border-slate-100 pb-2">
-                          <span className="text-slate-500 flex items-center gap-2">
-                            <Clock className="w-4 h-4" /> Tahun Pembuatan
-                          </span>
-                          <span className="font-bold text-slate-900">
-                            {mapItem.year}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm">
-                          <span className="text-slate-500 flex items-center gap-2">
-                            <User2Icon className="w-4 h-4" /> Mapper
-                          </span>
-                          <span className="font-bold text-slate-900">-</span>
-                        </div>
-                      </div>
-
-                      {/* CTA Button in Card */}
-                      <button className="w-full py-3 rounded-lg font-bold text-sm bg-slate-100 text-slate-700 hover:bg-foni-navy hover:text-white transition-colors flex items-center justify-center gap-2">
-                        <Lock className="w-4 h-4" /> Minta Akses Peta
-                      </button>
-                    </div>
-                  </div>
+                  <MapCard key={mapItem.id} mapItem={mapItem} />
                 ))}
               </div>
             </div>
@@ -231,7 +143,7 @@ export default async function MapsPage() {
         </div>
       </section>
 
-      {/* 4. Minimalist CTA Section */}
+      {/* 4. CTA Section */}
       <section className="mt-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-foni-navy rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10">

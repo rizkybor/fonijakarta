@@ -61,7 +61,8 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-foni-orange shrink-0 mt-0.5" />
-                <span className="text-sm">GOR Cendrawasih, Bambu larangan pengasingan, RT.9/RW.8, Kalideres, Kec. Kalideres, Kota Jakarta Barat, DKI Jakarta (11730)</span>
+                <span className="text-sm">GOR Cendrawasih - Jl. Cendrawasih X No.4, RT.6/RW.17, Cengkareng Barat
+Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta (11730)</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-foni-orange shrink-0" />

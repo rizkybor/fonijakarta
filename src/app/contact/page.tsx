@@ -44,8 +44,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-slate-800 mb-2 text-sm uppercase tracking-widest">Sekretariat</h3>
                     <p className="text-slate-500 text-sm leading-relaxed">
-                      GOR Cendrawasih, Bambu larangan pengasingan<br />
-                      RT.9/RW.8, Kalideres, Kec. Kalideres<br />
+                      GOR Cendrawasih, GOR Cendrawasih - Jl. Cendrawasih X No.4, RT.6/RW.17, Cengkareng Barat
+Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta (11730)
+                      RT.9/RW.8, Kalideres, Kec. Kalideres
                       Kota Jakarta Barat, DKI Jakarta (11730)
                     </p>
                   </div>

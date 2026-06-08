@@ -1,4 +1,12 @@
-CREATE TABLE IF NOT EXISTS public.galeripeta (
+-- ============================================
+-- STEP 1: Drop tabel lama (beserta policy & RLS)
+-- ============================================
+DROP TABLE IF EXISTS public.galeripeta;
+
+-- ============================================
+-- STEP 2: Buat tabel baru dengan skema lengkap
+-- ============================================
+CREATE TABLE public.galeripeta (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name TEXT NOT NULL,
     region TEXT NOT NULL,
@@ -9,24 +17,36 @@ CREATE TABLE IF NOT EXISTS public.galeripeta (
     area_size TEXT NOT NULL,
     status TEXT NOT NULL,
     image TEXT NOT NULL,
+    software TEXT,
+    notes TEXT,
+    contact_name TEXT,
+    contact_phone TEXT,
+    contact_email TEXT,
+    contact_instagram TEXT,
+    contact_twitter TEXT,
+    contact_facebook TEXT,
     created_at TIMESTAMPTZ DEFAULT now()
 );
 
--- Hapus data dummy sebelumnya jika ada untuk menghindari duplikat
-DELETE FROM public.galeripeta;
+-- ============================================
+-- STEP 3: Insert data
+-- ============================================
+INSERT INTO public.galeripeta 
+  (name, region, scale, contour_interval, year, norm, area_size, status, image, software, notes, contact_name, contact_phone, contact_email, contact_instagram, contact_twitter, contact_facebook)
+VALUES
+  ('Taman Lapangan Banteng', 'Jakarta Pusat', '1:2.000', '2m', '2024', 'ISSprOM 2019-2', '0.12 km²', 'Active', 'src/assets/maps/maplapangan-banteng.png', 'OOM', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('SMAN 110 Jakarta Utara', 'Jakarta Utara', '1:1.000', '1m', '2024', 'ISSprOM 2019-2', '0.02 km²', 'Active', 'src/assets/maps/map_sman_110_jakarta.png', 'OOM', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('Petogogan (SMKN 29 Jakarta)', 'Jakarta Selatan', '1:1.000', '1m', '2024', 'ISSprOM 2019-2', '0.03 km²', 'Active', 'src/assets/maps/map_petogogan_smkn_29_jakarta.png', 'OOM', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('Setu Babakan', 'Jakarta Selatan', '1:4.000', '2m', '2024', 'ISSprOM 2019-2', '0.32 km²', 'Active', 'src/assets/maps/map_setu_babakan.png', 'OOM', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('UIN Jakarta', 'Jakarta Selatan', '1:2.000', '2m', '2025', 'ISSprOM 2019-2', '0.40 km²', 'Active', 'src/assets/maps/map_uin_jakarta.png', 'OOM', 'Tahun Pembuatan Ulang (Remake)', NULL, NULL, NULL, NULL, NULL, NULL),
+  ('Ancol', 'Jakarta Utara', '1:4.000', '2m', '2025', 'ISSprOM 2019-2', '1.5 km²', 'Active', 'src/assets/maps/map_ancol.png', 'OOM', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('SMAN 70 Jakarta', 'Jakarta Selatan', '1:1.000', '1m', '2026', 'ISSprOM 2019-2', '0.04 km²', 'Active', 'src/assets/maps/map_sman_70_jakarta.png', 'OOM', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
--- Seed Data Dummy
-INSERT INTO public.galeripeta (name, region, scale, contour_interval, year, norm, area_size, status, image) VALUES
-('Taman Margasatwa Ragunan', 'Jakarta Selatan', '1:4.000', '2m', '2023', 'ISSprOM 2019-2', '1.4 km²', 'Active', 'https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop'),
-('Hutan Kota Srengseng', 'Jakarta Barat', '1:5.000', '2.5m', '2022', 'ISOM 2017-2', '0.8 km²', 'Needs Update', 'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2041&auto=format&fit=crop'),
-('Bumi Perkemahan Cibubur', 'Jakarta Timur', '1:10.000', '5m', '2025', 'ISOM 2017-2', '2.1 km²', 'Active', 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1976&auto=format&fit=crop'),
-('Kompleks Gelora Bung Karno', 'Jakarta Pusat', '1:4.000', '2m', '2024', 'ISSprOM 2019-2', '1.2 km²', 'Active', 'https://images.unsplash.com/photo-1555696958-c5049b866f6f?q=80&w=1974&auto=format&fit=crop'),
-('Hutan Kota UI Depok', 'Jakarta Selatan', '1:10.000', '5m', '2021', 'ISOM 2017-2', '3.5 km²', 'Needs Update', 'https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop');
-
--- Aktifkan RLS di tabel galeripeta
+-- ============================================
+-- STEP 4: Aktifkan RLS & buat policy
+-- ============================================
 ALTER TABLE public.galeripeta ENABLE ROW LEVEL SECURITY;
 
--- Buat policy agar semua orang bisa membaca (SELECT) data galeripeta
 CREATE POLICY "Izinkan semua orang membaca galeripeta" 
 ON public.galeripeta 
 FOR SELECT 

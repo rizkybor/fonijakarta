@@ -193,64 +193,166 @@ export const pengurusHierarchy = [
 
 export const mapGallery = [
   {
-    id: "map-1",
-    name: "Taman Margasatwa Ragunan",
-    region: "Jakarta Selatan",
-    scale: "1:4.000",
-    contourInterval: "2m",
-    year: "2023",
-    norm: "ISSprOM 2019-2",
-    areaSize: "1.4 km²",
-    status: "Active",
-    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop",
+    "id": "map-custom-1",
+    "name": "Taman Lapangan Banteng",
+    "region": "Jakarta Pusat",
+    "scale": "1:2.000",
+    "contourInterval": "2m",
+    "year": "2024",
+    "norm": "ISSprOM 2019-2",
+    "areaSize": "0.12 km²",
+    "status": "Active",
+    "software": "OOM",
+    "image": "src/assets/maps/maplapangan-banteng.png",
+    "contact": {
+      "name": null,
+      "phone": null,
+      "email": null,
+      "socialMedia": {
+        "instagram": null,
+        "twitter": null,
+        "facebook": null
+      }
+    }
   },
   {
-    id: "map-2",
-    name: "Hutan Kota Srengseng",
-    region: "Jakarta Barat",
-    scale: "1:5.000",
-    contourInterval: "2.5m",
-    year: "2022",
-    norm: "ISOM 2017-2",
-    areaSize: "0.8 km²",
-    status: "Needs Update",
-    image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2041&auto=format&fit=crop",
+    "id": "map-custom-2",
+    "name": "SMAN 110 Jakarta Utara",
+    "region": "Jakarta Utara",
+    "scale": "1:1.000",
+    "contourInterval": "1m",
+    "year": "2024",
+    "norm": "ISSprOM 2019-2",
+    "areaSize": "0.02 km²",
+    "status": "Active",
+    "software": "OOM",
+    "image": "src/assets/maps/map_sman_110_jakarta.png",
+    "contact": {
+      "name": null,
+      "phone": null,
+      "email": null,
+      "socialMedia": {
+        "instagram": null,
+        "twitter": null,
+        "facebook": null
+      }
+    }
   },
   {
-    id: "map-3",
-    name: "Bumi Perkemahan Cibubur",
-    region: "Jakarta Timur",
-    scale: "1:10.000",
-    contourInterval: "5m",
-    year: "2025",
-    norm: "ISOM 2017-2",
-    areaSize: "2.1 km²",
-    status: "Active",
-    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1976&auto=format&fit=crop",
+    "id": "map-custom-3",
+    "name": "Petogogan (SMKN 29 Jakarta)",
+    "region": "Jakarta Selatan",
+    "scale": "1:1.000",
+    "contourInterval": "1m",
+    "year": "2024",
+    "norm": "ISSprOM 2019-2",
+    "areaSize": "0.03 km²",
+    "status": "Active",
+    "software": "OOM",
+    "image": "src/assets/maps/map_petogogan_smkn_29_jakarta.png",
+    "contact": {
+      "name": null,
+      "phone": null,
+      "email": null,
+      "socialMedia": {
+        "instagram": null,
+        "twitter": null,
+        "facebook": null
+      }
+    }
   },
   {
-    id: "map-4",
-    name: "Kompleks Gelora Bung Karno",
-    region: "Jakarta Pusat",
-    scale: "1:4.000",
-    contourInterval: "2m",
-    year: "2024",
-    norm: "ISSprOM 2019-2",
-    areaSize: "1.2 km²",
-    status: "Active",
-    image: "https://images.unsplash.com/photo-1555696958-c5049b866f6f?q=80&w=1974&auto=format&fit=crop",
+    "id": "map-custom-4",
+    "name": "Setu Babakan",
+    "region": "Jakarta Selatan",
+    "scale": "1:4.000",
+    "contourInterval": "2m",
+    "year": "2024",
+    "norm": "ISSprOM 2019-2",
+    "areaSize": "0.32 km²",
+    "status": "Active",
+    "software": "OOM",
+    "image": "src/assets/maps/map_setu_babakan.png",
+    "contact": {
+      "name": null,
+      "phone": null,
+      "email": null,
+      "socialMedia": {
+        "instagram": null,
+        "twitter": null,
+        "facebook": null
+      }
+    }
   },
   {
-    id: "map-5",
-    name: "Hutan Kota UI Depok",
-    region: "Jakarta Selatan",
-    scale: "1:10.000",
-    contourInterval: "5m",
-    year: "2021",
-    norm: "ISOM 2017-2",
-    areaSize: "3.5 km²",
-    status: "Needs Update",
-    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop",
+    "id": "map-custom-5",
+    "name": "UIN Jakarta",
+    "region": "Jakarta Selatan",
+    "scale": "1:2.000",
+    "contourInterval": "2m",
+    "year": "2025",
+    "norm": "ISSprOM 2019-2",
+    "areaSize": "0.40 km²",
+    "status": "Active",
+    "software": "OOM",
+    "notes": "Tahun Pembuatan Ulang (Remake)",
+    "image": "src/assets/maps/map_uin_jakarta.png",
+    "contact": {
+      "name": null,
+      "phone": null,
+      "email": null,
+      "socialMedia": {
+        "instagram": null,
+        "twitter": null,
+        "facebook": null
+      }
+    }
+  },
+  {
+    "id": "map-custom-6",
+    "name": "Ancol",
+    "region": "Jakarta Utara",
+    "scale": "1:4.000",
+    "contourInterval": "2m",
+    "year": "2025",
+    "norm": "ISSprOM 2019-2",
+    "areaSize": "1.5 km²",
+    "status": "Active",
+    "software": "OOM",
+    "image": "src/assets/maps/map_ancol.png",
+    "contact": {
+      "name": null,
+      "phone": null,
+      "email": null,
+      "socialMedia": {
+        "instagram": null,
+        "twitter": null,
+        "facebook": null
+      }
+    }
+  },
+  {
+    "id": "map-custom-7",
+    "name": "SMAN 70 Jakarta",
+    "region": "Jakarta Selatan",
+    "scale": "1:1.000",
+    "contourInterval": "1m",
+    "year": "2026",
+    "norm": "ISSprOM 2019-2",
+    "areaSize": "0.04 km²",
+    "status": "Active",
+    "software": "OOM",
+    "image": "src/assets/maps/map_sman_70_jakarta.png",
+    "contact": {
+      "name": null,
+      "phone": null,
+      "email": null,
+      "socialMedia": {
+        "instagram": null,
+        "twitter": null,
+        "facebook": null
+      }
+    }
   }
 ];
 
