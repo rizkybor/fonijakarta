@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import EventImageModal from "./EventImageModal";
+import ShareButtons from "./ShareButtons";
 
 export const revalidate = 60;
 
@@ -27,12 +28,16 @@ export default async function EventDetailPage({
   return (
     <div className="pt-42 pb-24 min-h-screen bg-slate-50">
       <div className="max-w-4xl mx-auto px-6">
-        <Link
-          href="/events"
-          className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-foni-navy mb-8"
-        >
-          <ArrowLeft className="w-4 h-4" /> Kembali ke Jadwal
-        </Link>
+        <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
+          <Link
+            href="/events"
+            className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-foni-navy"
+          >
+            <ArrowLeft className="w-4 h-4" /> Kembali ke Jadwal
+          </Link>
+
+          <ShareButtons title={evt.title} />
+        </div>
 
         <div className="bg-white rounded-4xl overflow-hidden border border-slate-200 shadow-sm">
           <EventImageModal
